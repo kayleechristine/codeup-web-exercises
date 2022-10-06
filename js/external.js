@@ -10,7 +10,7 @@ var littleMermaid = prompt("The Little Mermaid");
 var brotherBear = prompt("Brother Bear");
 var hercules = prompt("Hercules");
 var subtotal = (3*littleMermaid + 3*brotherBear + 3*hercules);
-alert("Your subtotal will be $" + subtotal + ".00.");
+alert("Your subtotal will be $" + subtotal + ".");
 
 // Suppose you're working as a contractor for 3 companies: Google, Amazon and Facebook, they pay you a different rate per hour. Google pays $400, Amazon $380, and Facebook $350. How much will you receive in payment for this week? You worked 10 hours for Facebook, 6 hours for Google and 4 hours for Amazon.
 
@@ -19,7 +19,7 @@ var google = prompt("Hours at Google:");
 var amazon = prompt("Hours at Amazon:");
 var facebook = prompt("Hours at Facebook:");
 var payday = (400*google + 380*amazon + 350*facebook);
-alert("Chaching! You paycheck this week is $" + payday + ".00!");
+alert("Chaching! You paycheck this week is $" + payday + "!");
 
 // A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.
 
