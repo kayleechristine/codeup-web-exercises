@@ -78,27 +78,137 @@ const isFalsy = (input) => input == false;
 // console.log(isFalsy(false));
 
 // Make a function named isVowel(letter)
+const vowel = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+const isVowel = (letter) => vowel.includes(letter);
+// console.log(isVowel("a"));
+// console.log(isVowel("x"));
+// console.log(isVowel("E"));
+
 // Make a function named isConsonant(letter)
+const isConsonant = (letter) => (vowel.includes(letter) !== true) && (typeof(letter) === "string");
+// console.log(isConsonant("q"));
+// console.log(isConsonant("i"));
+// console.log(isConsonant(7));
+
 // Make a function named isCapital(letter)
+const isCapital = (letter) => letter === letter.toUpperCase();
+// console.log(isCapital("a"));
+// console.log(isCapital("A"));
+// console.log(isCapital("D"));
+
 // Make a function named isLowerCase(letter)
+const isLowerCase = (letter) => letter === letter.toLowerCase();
+// console.log(isCapital("a"));
+// console.log(isCapital("A"));
+// console.log(isCapital("D"));
+
 // Make a function named hasLowerCase(string) that returns if a string has any lower cased letter
+const hasLowerCase = (string) => string !== string.toUpperCase();
+// console.log(hasLowerCase("aeiou"));
+// console.log(hasLowerCase("AEIOU"));
+// console.log(hasLowerCase("aEiOu"));
+
 // Make a function named isSpace(letter) that returns if a character is a space character
+const isSpace = (letter) => letter === " ";
+// console.log(isSpace(" "));
+// console.log(isSpace("Q"));
+
 // Make a function named isZero(number)
+const isZero = (number) => number === 0;
+// console.log(isZero(0));
+// console.log(isZero(10));
+// console.log(isZero("yellow"));
+
 // Make a function named notZero(input) that returns true if the input is not zero
+const notZero = (input) => input !== 0;
+// console.log(notZero(0));
+// console.log(notZero(12));
+// console.log(notZero("orange"));
+
 // Write a function named lowerCase(string)
+const lowerCase = (string) => string.toLowerCase();
+// console.log(lowerCase("HELLO"));
+// console.log(lowerCase("HoWdY"));
+// console.log(lowerCase("hi"));
+
 // Write a function named double(n) that returns a number times two
+const double = (n) => n * 2;
+// console.log(double(1));
+// console.log(double(2));
+// console.log(double(3));
+
 // Write a function named triple(n) that returns a number times 3
+const triple = (n) => n * 3;
+// console.log(triple(1));
+// console.log(triple(2));
+// console.log(triple(3));
+
 // Write a function named quadruple(n) that returns a number times 4
+const quadruple = (n) => n * 4;
+// console.log(quadruple(1));
+// console.log(quadruple(2));
+// console.log(quadruple(3));
+
 // Write a function named half(n) that returns 1/2 of the provided input
+const half = (n) => n / 2;
+// console.log(half(1));
+// console.log(half(2));
+// console.log(half(3));
+
 // Write a function named subtract(a, b) that returns a minus b
+const subtract = (a, b) => a - b;
+// console.log(subtract(1, 1));
+// console.log(subtract(2, 3));
+// console.log(subtract(4, 2));
+
 // Write a function named multiply(a, b) that returns the product of a times b
+const multiply = (a, b) => a * b;
+// console.log(multiply(1, 100));
+// console.log(multiply(2, 2));
+// console.log(multiply(3, 2.5));
+
 // Write a function named divide(a, b) that returns a divided by b
+const divide = (a, b) => a / b;
+// console.log(divide(12, 2));
+// console.log(divide(25, 5));
+// console.log(divide(15, 5));
+
 // Write a function named remainder(a, b) that returns the remainder after dividing a by b
-// Make a function named modulo(a, b) that returns the returns the remainder after dividing a by b
+const remainder = (a, b) => a % b;
+// console.log(remainder(25, 5));
+// console.log(remainder(32, 10));
+// console.log(remainder(100, 3));
+
 // Write a function named cube(n) that returns n * n * n
+const cube = (n) => n * n * n;
+// console.log(cube(1));
+// console.log(cube(2));
+// console.log(cube(3));
+
 // Write a function named squareRoot(n) that returns the square root of the input
+const squareRoot = (n) => Math.sqrt(n);
+// console.log(squareRoot(25));
+// console.log(squareRoot(36));
+// console.log(squareRoot(49));
+
 // Write a function named cubeRoot(n) that returns the cube root of the input
+const cubeRoot = (n) => Math.cbrt(n);
+// console.log(cubeRoot(1));
+// console.log(cubeRoot(27));
+// console.log(cubeRoot(125));
+
 // Write a function named invertSign(number) that returns a negative version of a postive number, a positve version of negative, and false for all else.
+// function invertSign(number) {
+//     if (typeOf(number) === "number") {
+//         return -1 * number;
+//     } else {
+//         return false
+//     }
+// }
+// console.log(invertSign(1));
+// console.log(invertSign(-2));
+// console.log(invertSign("potato"));
+
 // Write a function named degreesToRadians(number)
 // Write a function named radiansToDegrees(number)
 // Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
