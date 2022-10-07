@@ -86,7 +86,7 @@ const calculateTip = (tipPercent, billTotal) => tipPercent * billTotal;
  */
 let billTotal = prompt("Subtotal Amount:");
 let tipPercent = prompt("Tip Percentage (0.0 - 1.0):")
-alert("The total tip amount will be $" + calculateTip(tipPercent, billTotal) + ".");
+alert("The total tip amount will be $" + calculateTip(parseFloat(tipPercent), parseFloat(billTotal)) + ".");
 
 /**
  * TODO:
