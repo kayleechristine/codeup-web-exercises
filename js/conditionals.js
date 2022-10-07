@@ -111,6 +111,31 @@ alert(analyzeColor(favColor));
  * return value.
  */
 
+function calculateTotal(luckyNum, totalAmount) {
+    if (luckyNum === 0) {
+        return "$" + totalAmount;
+    } else if (luckyNum === 1) {
+        return "$" + (totalAmount - (0.1 * totalAmount));
+    } else if (luckyNum === 2) {
+        return "$" + (totalAmount - (0.25 * totalAmount));
+    } else if (luckyNum === 3) {
+        return "$" + (totalAmount - (0.35 * totalAmount));
+    } else if (luckyNum === 4) {
+        return "$" + (totalAmount - (0.5 * totalAmount));
+    } else if (luckyNum === 5) {
+        return "$0";
+    } else {
+       return "Sir, this a Walmart";
+    }
+}
+// console.log(calculateTotal(0, 100));
+// console.log(calculateTotal(1, 100));
+// console.log(calculateTotal(2, 100));
+// console.log(calculateTotal(3, 100));
+// console.log(calculateTotal(4, 100));
+// console.log(calculateTotal(5, 100));
+// console.log(calculateTotal(6, 100));
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -120,7 +145,10 @@ alert(analyzeColor(favColor));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+let userSubtotal = prompt("Walmart Checkout Subtotal:");
+alert("Your lucky number is: " + luckyNumber + "! This brings your subtotal to: " + calculateTotal(luckyNumber, userSubtotal) + ".");
 
 /**
  * TODO:
@@ -138,5 +166,34 @@ alert(analyzeColor(favColor));
  *
  *
  * Can you refactor your code to use functions?
+ * Yes, as shown below as a comment.
  * HINT: The way we prompt for a value could be improved
  */
+
+let confirmed = confirm("Would you like to use the Numbers Module?");
+let userNum = confirmed === true ? prompt("Please enter a number:") : alert("Skipping the Numbers Module...");
+userNum = parseFloat(userNum);
+// function numbersModule(userNum) {
+    if (typeof(userNum) === "number" && confirmed === true) {
+        alert(userNum % 2 === 0 ? "This is an even number." : "This is an odd number.");
+        alert(userNum + " + 100 = " + (userNum + 100));
+        alert(userNum > 0 ? "This is a positive number." : "This is a negative number.");
+    } else if (confirmed === true) {
+        alert("Unable to compute. Please enter a number.");
+    }
+// }
+
+// Create two variables, one for the user's password & one for username via prompt.
+// Create two more variables named userUsername and userPassword that prompt the user for their credentials.
+// Make an if statement and log to the console is the information is correct.
+
+const userUsername = prompt("Create a Username:");
+const userPassword = prompt("Create a Password:");
+
+function login(username, password) {
+    if (username === userUsername && password === userPassword) {
+        console.log("Welcome " + userUsername + ".");
+    } else {
+        console.log("Please try again.");
+    }
+}
