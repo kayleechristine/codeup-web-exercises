@@ -52,3 +52,5 @@ if (numberBurgers > 2 || goodSavings === true) {
 } else {
     alert("I'm sorry, you'll need to buy more than two Good Burgers or join our Good Savings program to use this coupon. Good Bye.")
 }
+
+//
