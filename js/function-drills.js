@@ -198,16 +198,12 @@ const cubeRoot = (n) => Math.cbrt(n);
 // console.log(cubeRoot(125));
 
 // Write a function named invertSign(number) that returns a negative version of a postive number, a positve version of negative, and false for all else.
-// function invertSign(number) {
-//     if (typeOf(number) === "number") {
-//         return -1 * number;
-//     } else {
-//         return false
-//     }
-// }
-// console.log(invertSign(1));
-// console.log(invertSign(-2));
-// console.log(invertSign("potato"));
+function invertSign(number) {
+    number * -1 === -number
+
+console.log(invertSign(1));
+console.log(invertSign(-2));
+console.log(invertSign("potato"));
 
 // Write a function named degreesToRadians(number)
 // Write a function named radiansToDegrees(number)
