@@ -108,4 +108,4 @@ console.log(applyDiscount(100, 0.20));
 console.log(applyDiscount(300, 0.15));
 console.log(applyDiscount(60, 0.12));
 
-//
+// complete
