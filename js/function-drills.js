@@ -198,17 +198,61 @@ const cubeRoot = (n) => Math.cbrt(n);
 // console.log(cubeRoot(125));
 
 // Write a function named invertSign(number) that returns a negative version of a postive number, a positve version of negative, and false for all else.
-function invertSign(number) {
-    number * -1 === -number
 
-console.log(invertSign(1));
-console.log(invertSign(-2));
-console.log(invertSign("potato"));
+function invertSign(number) {
+    if (number === Math.abs(number)) {
+        return number + " is positive";
+    } else if (typeof(number) !== "number") {
+        return false;
+    } else {
+        return number + " is negative";
+    }
+}
+
+// console.log(invertSign(1));
+// console.log(invertSign(-2));
+// console.log(invertSign("potato"));
 
 // Write a function named degreesToRadians(number)
+
+function degreesToRadians(degrees) {
+    return (degrees * 0.017453).toFixed(5);
+}
+
+// console.log(degreesToRadians(360));
+// console.log(degreesToRadians(180));
+// console.log(degreesToRadians(90));
+
 // Write a function named radiansToDegrees(number)
+
+function radiansToDegrees(radians) {
+    return (radians / 0.017453).toFixed(0);
+}
+
+// console.log(radiansToDegrees(6.283185));
+// console.log(radiansToDegrees(3.141593));
+// console.log(radiansToDegrees(1.570796));
+
 // Make a function named isBlank(input) that determines if a given input is spaces, newline characters, or tabs.
+
+function isBlank(char) {
+    if (Number(char) === 0 && char.includes("0") !== true) {
+        return "This is a blank character";
+    } else {
+        return "This is not a blank character";
+    }
+}
+
+// console.log(isBlank("   "));
+// console.log(isBlank("   "));
+// console.log(isBlank("Q"));
+// console.log(isBlank("0"));
+// console.log(isBlank("000"));
+
 //     Make a function named trim(string) that removes empty spaces before and after the input.
+
+
+
 //     Make a function named areEqual(input1, input2) that returns if both inputs have the same value
 // Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
 //     Make a function named not(input) returns the input with a flipped boolean
