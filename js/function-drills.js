@@ -251,15 +251,74 @@ function isBlank(char) {
 
 //     Make a function named trim(string) that removes empty spaces before and after the input.
 
+const trim = (string) => string.trim();
 
+// console.log(trim("      hello       "));
+// console.log(trim("         hi"));
+// console.log(trim("hey      "));
+// console.log(trim("howdy"));
 
 //     Make a function named areEqual(input1, input2) that returns if both inputs have the same value
+
+const areEqual = (input1, input2) => input1 == input2;
+
+// console.log(areEqual("hello", "howdy"));
+// console.log(areEqual(2, "2"));
+// console.log(areEqual(3, "three"));
+
 // Make a function named areIdentical(input1, input2) that returns if both inputs are same value and data type.
+
+const areIdentical = (input1, input2) => input1 === input2;
+
+// console.log(areIdentical(2, "two"));
+// console.log(areIdentical(2, "2"));
+// console.log(areIdentical(2, 2));
+
 //     Make a function named not(input) returns the input with a flipped boolean
+
+const not = (input) => !input;
+
+// console.log(not(true));
+// console.log(not(false));
+// console.log(not(1));
+// console.log(not(0));
+
 // Make a function named notNot(input) that the negation of the negation of the input.
+
+const notNot = (input) => !!input;
+
+// console.log(notNot(true));
+// console.log(notNot(false));
+// console.log(notNot(1));
+// console.log(notNot(0));
+
 //     Make a function named and(predicate1, predicate2) that returns the logical operation of AND
+
+const and = (predicate1, predicate2) => predicate1 && predicate2;
+
+// console.log(and(true, true));
+// console.log(and(true, false));
+// console.log(and(false, true));
+// console.log(and(false, false));
+
 // Make a function named or(predicate1, predicate2) that returns the logical operation of OR
+
+const or = (predicate1, predicate2) => predicate1 || predicate2;
+
+// console.log(or(true, true));
+// console.log(or(true, false));
+// console.log(or(false, true));
+// console.log(or(false, false));
+
 // Write a function called reverseString(string) that reverses a string
+
+// const reverseString = (string) => .reverse(string);
+//
+// console.log(reverseString("hello"));
+// console.log(reverseString("abcd"));
+// console.log(reverseString("racecar"));
+// console.log(reverseString("kayak"));
+
 // Make a function named absoluteValue(number) that returns the absolute value of a number.
 //     Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
 //     Simple Function Drills
