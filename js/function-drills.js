@@ -312,8 +312,10 @@ const or = (predicate1, predicate2) => predicate1 || predicate2;
 
 // Write a function called reverseString(string) that reverses a string
 
-// const reverseString = (string) => .reverse(string);
-//
+function reverseString(string) {
+    return string.split("").reverse().join("");
+}
+
 // console.log(reverseString("hello"));
 // console.log(reverseString("abcd"));
 // console.log(reverseString("racecar"));
