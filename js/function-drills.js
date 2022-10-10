@@ -393,9 +393,25 @@ const sayString = (input) => input;
 //     Challenge Function Drills
 // Write a function called identity(input) that takes in an argument called input and returns that input.
 //
+// const identity = (input) => input;
+
+// console.log(identity("Kaylee"));
+// console.log(identity("was"));
+// console.log(identity("here"));
+// console.log(identity(":)"));
+
 //     Write a function called getRandomNumber(min, max) that returns a random number between min and max values sent to that function call.
+
+const getRandomNumber = (min, max) => Math.ceil(Math.random() * (max - min) + min);
+
+// console.log(getRandomNumber(5, 10));
+// console.log(getRandomNumber(10, 20));
+// console.log(getRandomNumber(50, 100));
+
 //
 // Write a function called first(input) that returns the first character in the provided string.
+
+
 //
 //     Write a function called last(input) that returns the last character of a string
 //
