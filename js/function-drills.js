@@ -416,10 +416,18 @@ const first = (input) => input.substring(0, 1);
 // console.log(first("Hello"));
 // console.log(first("Joshua"));
 // console.log(first("Kaylee"));
-
 //
 //     Write a function called last(input) that returns the last character of a string
 //
+// const last = (input) => input.substring(-1, -1);
+// function last(input) {
+//     input.
+// }
+//
+// console.log(last("Hello"));
+// console.log(last("Joshua"));
+// console.log(last("Kaylee"));
+
 // Write a function called rest(input) that returns everything but the first character of a string.
 //
 //     Write a function called reverse(input) that takes a string and returns it reversed.
