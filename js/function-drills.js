@@ -339,24 +339,57 @@ const rollDice = (sides) => Math.ceil(Math.random() * sides);
 
 //     Simple Function Drills
 // Make a function called returnTwo() that returns the number 2 when called
+
+const returnTwo = (number) => 2;
+
 // Test this function with console.log(returnTwo())
 //
+// console.log(returnTwo(7));
+// console.log(returnTwo(-2));
+// console.log(returnTwo("potato"));
+
 //     Make a function called sayHowdy() which console.logs the string “Howdy!”
+
+const sayHowdy = (input) => console.log("Howdy!");
 //
 // Test this function by directly calling sayHowdy()
 //
+// console.log(sayHowdy("Hello"));
+// console.log(sayHowdy("potato"));
+// console.log(sayHowdy());
+
+
 // Remember this function does not need a defined return value
 //
 // Make a function called returnName() that returns the string of your name
 //
+const returnName = (name) => console.log(name);
+
 // Test this function with console.log(returnName())
 //
+// console.log(returnName("Kaylee"));
+// console.log(returnName("Joshua"));
+// console.log(returnName("Julia"));
+
 //     Make a function called addThree() which takes in a number input and returns the number plus 3.
 // Test this function with console.log(addThree(5))
 //
+const addThree = (number) => Number(number) + 3;
+
+// console.log(addThree(-3));
+// console.log(addThree(0));
+// console.log(addThree(5));
+// console.log(addThree("potato"));
+
 //     Make a function called sayString() which returns the string input passed in.
 // Test this function with console.log(sayString('codeup'))
 //
+const sayString = (input) => input;
+
+// console.log(sayString("codeup"));
+// console.log(sayString("CodeUp"));
+// console.log(sayString("CODEUP"));
+
 //     Challenge Function Drills
 // Write a function called identity(input) that takes in an argument called input and returns that input.
 //
