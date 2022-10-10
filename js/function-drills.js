@@ -322,7 +322,21 @@ function reverseString(string) {
 // console.log(reverseString("kayak"));
 
 // Make a function named absoluteValue(number) that returns the absolute value of a number.
+
+const absoluteValue = (number) => Math.abs(number);
+
+// console.log(absoluteValue(12));
+// console.log(absoluteValue(-6));
+// console.log(absoluteValue(-12));
+
 //     Make a function named rollDice(sides) that takes in an argument containing the number of sides the die should have. Generate a random number between 1 up to and including the number of sides.
+
+const rollDice = (sides) => Math.ceil(Math.random() * sides);
+
+// console.log(rollDice(6));
+// console.log(rollDice(12));
+// console.log(rollDice(20));
+
 //     Simple Function Drills
 // Make a function called returnTwo() that returns the number 2 when called
 // Test this function with console.log(returnTwo())
