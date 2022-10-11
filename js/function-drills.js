@@ -521,6 +521,12 @@ const doMath = (operator, a, b) => operator(a, b);
 // Even More Function Bonuses
 // Create a function that will return how many whitespace characters are at the beginning and end of a string.
 //
+const countWhiteSpace = (input) => input.split(" ").length-1;
+
+// console.log(countWhiteSpace(" Hi "));
+// console.log(countWhiteSpace(" Hello   "));
+// console.log(countWhiteSpace("     Howdy  "));
+
 //     Create a function that takes in two string inputs.
 //
 //     If the second string input is present in the first, return the first input string with the second input string removed from it.
