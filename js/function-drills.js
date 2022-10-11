@@ -504,6 +504,20 @@ const sumOfSquares = (a, b) => add(square(a), square(b));
 
 // Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
 //
+const doMath = (operator, a, b) => operator(a, b);
+
+// console.log(doMath(add, 2, 2));
+// console.log(doMath(multiply, 5, 5));
+// console.log(doMath(divide, 20, 4));
+
+// Write a function that returns a number times 5, and return 0 if the input was not a number.
+
+// const multFive = (x) => (typeof(x) === "number") ? x * 5 : 0;
+//
+// console.log(multFive(5));
+// console.log(multFive(2));
+// console.log(multFive("potato"));
+
 // Even More Function Bonuses
 // Create a function that will return how many whitespace characters are at the beginning and end of a string.
 //
