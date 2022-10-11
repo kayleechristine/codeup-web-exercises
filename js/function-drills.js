@@ -460,18 +460,48 @@ const count = (input) => input.length;
 
 //     Write a function called add(a, b) that returns the sum of a and b
 //
+const add = (a, b) => a + b;
+
+// console.log(add(1, 1));
+// console.log(add(25, 25));
+// console.log(add(357, 777));
+
+
 // Write a function called subtract(a, b) that return the difference between the two inputs.
 //
+// const subtract = (a, b) => a - b;
+//
+// Function already done above
+//
+// console.log(subtract(1, 1));
+// console.log(subtract(25, 25));
+// console.log(subtract(357, 777));
+
 //     Write multiply(a, b) function that returns the product
+//  Function already done above
 //
 // Write a divide(numerator, denominator) function that returns a divided by b
+//  Function already done above
 //
 // Write a remainder(number, divisor) function that returns the remainder left over when dividing number by the divisor
+//  Function already done above
 //
 // Write the function square(a) that takes in a number and returns the number multiplied by itself.
 //
+const square = (a) => a * a;
+
+// console.log(square(2));
+// console.log(square(5));
+// console.log(square(6));
+
 //     Write a function called sumOfSquares(a, b) that uses only your add() function and your square function and not + or * operators
 //
+const sumOfSquares = (a, b) => add(square(a), square(b));
+
+// console.log(sumOfSquares(1, 2));
+// console.log(sumOfSquares(3, 5));
+// console.log(sumOfSquares(6, 1));
+
 // Write a function called doMath(operator, a, b) that takes 3 parameters. The first parameter is the name of the math function you want to apply. a and b are the two numbers to run that function on.
 //
 // Even More Function Bonuses
