@@ -438,12 +438,18 @@ const rest = (input) => input.substring(1, input.length);
 //
 const reverse = (input) => input.split('').reverse().join('');
 
-console.log(reverse("Hello"));
-console.log(reverse("Joshua"));
-console.log(reverse("Kaylee"));
+// console.log(reverse("Hello"));
+// console.log(reverse("Joshua"));
+// console.log(reverse("Kaylee"));
 
 //     Write a function called isNumeric(input) that takes an input and returns a boolean if the input is numeric.
 //
+const isNumeric = (input) => typeof(input) === "number";
+
+// console.log(isNumeric(4));
+// console.log(isNumeric(Infinity));
+// console.log(isNumeric("potato"));
+
 //     Write a function called count(input) that takes in a string and returns the number of characters.
 //
 //     Write a function called add(a, b) that returns the sum of a and b
