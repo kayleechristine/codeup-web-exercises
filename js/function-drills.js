@@ -419,14 +419,15 @@ const first = (input) => input.substring(0, 1);
 //
 //     Write a function called last(input) that returns the last character of a string
 //
-// const last = (input) => input.substring(-1, -1);
-// function last(input) {
-//     input.
-// }
-//
-// console.log(last("Hello"));
-// console.log(last("Joshua"));
-// console.log(last("Kaylee"));
+
+function last(input) {
+    let final = input.length;
+    return input.substring(final - 1, final);
+}
+
+console.log(last("Hello"));
+console.log(last("Joshua"));
+console.log(last("Kaylee"));
 //
 // Write a function called rest(input) that returns everything but the first character of a string.
 //
