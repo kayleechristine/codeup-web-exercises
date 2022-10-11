@@ -436,6 +436,12 @@ const rest = (input) => input.substring(1, input.length);
 
 //     Write a function called reverse(input) that takes a string and returns it reversed.
 //
+const reverse = (input) => input.split('').reverse().join('');
+
+console.log(reverse("Hello"));
+console.log(reverse("Joshua"));
+console.log(reverse("Kaylee"));
+
 //     Write a function called isNumeric(input) that takes an input and returns a boolean if the input is numeric.
 //
 //     Write a function called count(input) that takes in a string and returns the number of characters.
