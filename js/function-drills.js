@@ -420,17 +420,20 @@ const first = (input) => input.substring(0, 1);
 //     Write a function called last(input) that returns the last character of a string
 //
 
-function last(input) {
-    let final = input.length;
-    return input.substring(final - 1, final);
-}
+const last = (input) => input.substring(input.length - 1, input.length);
 
-console.log(last("Hello"));
-console.log(last("Joshua"));
-console.log(last("Kaylee"));
+// console.log(last("Hello"));
+// console.log(last("Joshua"));
+// console.log(last("Kaylee"));
 //
 // Write a function called rest(input) that returns everything but the first character of a string.
 //
+const rest = (input) => input.substring(1, input.length);
+//
+// console.log(rest("Hello"));
+// console.log(rest("Joshua"));
+// console.log(rest("Kaylee"));
+
 //     Write a function called reverse(input) that takes a string and returns it reversed.
 //
 //     Write a function called isNumeric(input) that takes an input and returns a boolean if the input is numeric.
