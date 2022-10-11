@@ -452,6 +452,12 @@ const isNumeric = (input) => typeof(input) === "number";
 
 //     Write a function called count(input) that takes in a string and returns the number of characters.
 //
+const count = (input) => input.length;
+
+// console.log(count("potato"));
+// console.log(count("zucchini"));
+// console.log(count("squash"));
+
 //     Write a function called add(a, b) that returns the sum of a and b
 //
 // Write a function called subtract(a, b) that return the difference between the two inputs.
