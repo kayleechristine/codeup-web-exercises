@@ -2,17 +2,17 @@
 
 // Write a function, returnFive, that returns the number five. No inputs should be defined.
 
-function returnFive() {
-    return 5;
-}
+// function returnFive() {
+//     return 5;
+// }
 
 // Note: ask about how to do this as an arrow function
 
 // Write a function, isFive, that takes in an input and returns the boolean value true if the passed argument is the number 5 or the string "5". Return false otherwise.
-
-function isFive(x) {
-    return x == 5;
-}
+//
+// function isFive(x) {
+//     return x == 5;
+// }
 
 // how many inputs should the function have?
     // one input
@@ -24,9 +24,9 @@ function isFive(x) {
 
 // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
 
-function isShortWord(x) {
-    return x.length < 5;
-}
+// function isShortWord(x) {
+//     return x.length < 5;
+// }
 
 // how many inputs?
     // one input
@@ -37,10 +37,10 @@ function isShortWord(x) {
 
 
 // Write a function, isSameLength, that takes in two string inputs and returns the boolean value true if the passed arguments are the same length. Return false otherwise.
-
-function isSameLength(x, y) {
-    return x.length === y.length;
-}
+//
+// function isSameLength(x, y) {
+//     return x.length === y.length;
+// }
 
 // How many inputs?
     // two
@@ -58,7 +58,15 @@ function isSameLength(x, y) {
 // inBetween(25, 26, 25) returns false
 // inBetween(0, 1, 0.5) returns true
 
-const inBetween = (min, max, num) => (min < num) && (num < max);
+// const inBetween = (min, max, num) => (min < num) && (num < max);
 
 // console.log(inBetween(1, 4, 3));
 // console.log(inBetween(1, 4, 6));
+
+// Create a variable called num that is equal to 0. Write a while loop that increments "num" by 5 so long as num is less than 100.
+
+let num = 0;
+while (num < 100) {
+    console.log(num);
+    num += 5;
+}
