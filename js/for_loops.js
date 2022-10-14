@@ -17,12 +17,12 @@ function showMultiplicationTable(num) {
 
 function randomNumber() {
     for (let i = 0; i < 10; i++) {
-        let randoNum = Math.floor((Math.random() * 200) + 20);
+        let randoNum = Math.floor(Math.random() * (200 - 20) + 20);
         console.log(randoNum % 2 === 0 ? randoNum + " is even" : randoNum + " is odd");
     }
 }
 
-// console.log(randomNumber());
+console.log(randomNumber());
 
 // let number = "";
 // function pyramid() {
