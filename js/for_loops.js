@@ -12,7 +12,7 @@ function showMultiplicationTable(num) {
 //     console.log("complete");
 // console.log(showMultiplicationTable(5));
 //     console.log("complete");
-// console.log(showMultiplicationTable(7));
+console.log(showMultiplicationTable(7));
 //     console.log("complete");
 
 function randomNumber() {
@@ -37,31 +37,31 @@ console.log(randomNumber());
 //
 //     }
 
-function pyramid() {
-    for (let i = 1; i <= 9; i++) {
-        let number = "";
-        for (let j = 1; j <= i; j++) {
-            // number += i;
-            number = number + i;
-        }
-        console.log(number);
-    }
-}
-
 // function pyramid() {
 //     for (let i = 1; i <= 9; i++) {
-//         console.log(i.toString().repeat(i));
+//         let number = "";
+//         for (let j = 1; j <= i; j++) {
+//             // number += i;
+//             number = number + i;
+//         }
+//         console.log(number);
 //     }
 // }
 
-// console.log(pyramid());
+function pyramid() {
+    for (let i = 1; i <= 9; i++) {
+        console.log(i.toString().repeat(i));
+    }
+}
+
+console.log(pyramid());
 
 function minusFive() {
-    for (let i = 100; i > 5; i -= 5) {
+    for (let i = 100; i >= 5; i -= 5) {
         console.log(i);
     }
 }
 
-// console.log(minusFive());
+console.log(minusFive());
 
 //
