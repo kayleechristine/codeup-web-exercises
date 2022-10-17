@@ -21,7 +21,7 @@
      * results. Why might this be useful?
      *
      * BONUS:
-     * Create another string that would display your planets in an undordered
+     * Create another string that would display your planets in an unordered
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
@@ -33,6 +33,8 @@
     /** This could be useful for using JavaScript to modify the formatting of
      * an HTML page without altering the actual HTML. */
 
+    // * My Solution: * //
+
     console.log(planetsArray);
     let planetsList = planetsArray.join("</li><li>");
     planetsArray = planetsList.split("");
@@ -40,6 +42,18 @@
     planetsArray.push("</li></ul>");
     planetsList = planetsArray.join("");
     console.log(planetsList);
+
+    // * Class Solution: * //
+
+    // let newPlanetsArray = [];
+    // planetsArray.forEach(function (planet) {
+    //     newPlanetsArray.push(`<li>${planet}</li>`);
+    //     return newPlanetsArray;
+    // });
+    // newPlanetsArray.unshift("<ul>");
+    // newPlanetsArray.push("</ul>");
+    // let newPlanetsString = newPlanetsArray.join('');
+    // console.log(newPlanetsString);
 
 })();
 
