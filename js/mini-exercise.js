@@ -72,7 +72,6 @@
 // }
 
 // Create a function named "typePrinter" that accepts an array as an input, and logs the data type of each element to the console.
-// let arr = [true, "Icon", 25, "66", false, 0];
 
 function typePrinter(array) {
     return array.map(element => typeof(element));
