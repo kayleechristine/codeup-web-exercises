@@ -65,8 +65,17 @@
 
 // Create a variable called num that is equal to 0. Write a while loop that increments "num" by 5 so long as num is less than 100.
 
-let num = 0;
-while (num < 100) {
-    console.log(num);
-    num += 5;
+// let num = 0;
+// while (num < 100) {
+//     console.log(num);
+//     num += 5;
+// }
+
+// Create a function named "typePrinter" that accepts an array as an input, and logs the data type of each element to the console.
+// let arr = [true, "Icon", 25, "66", false, 0];
+
+function typePrinter(array) {
+    return array.map(element => typeof(element));
 }
+
+console.log(typePrinter([true, "Icon", 25, "66", false, 0]));
