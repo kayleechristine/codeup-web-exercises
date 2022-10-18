@@ -64,18 +64,18 @@
 
     // console.log(shoppers.length);
 
-    shoppers.forEach(function(shopper) {
+    // shoppers.forEach(function(shopper) {
         for (let i = 0; i < shoppers.length; i++) {
-            console.log(`Welcome, ${shoppers[i].name}!`);
-            console.log("Here's your receipt:");
+            console.log(`Welcome, ${shoppers[i].name}! Here's your receipt:`);
             if (shoppers[i].amount >= 200) {
-                let discount = shoppers[i].amount * 0.12;
-                let total = shoppers[i].amount - discount;
-                return `[ Name: ${shoppers[i].name} | Amount: \$${shoppers[i].amount} | Discount: \$${discount} | Subtotal: \$${total} ]`;
+                let discount = (shoppers[i].amount * 0.12).toFixed(2);
+                let total = (shoppers[i].amount - discount).toFixed(2);
+                console.log(`[ Name: ${shoppers[i].name} | Amount: \$${shoppers[i].amount} | Discount: \$${discount} | Subtotal: \$${total} ]`);
+            } else {
+                console.log(`[ Name: ${shoppers[i].name} | Amount: \$${shoppers[i].amount} | Discount: \$0 | Subtotal: \$${shoppers[i].amount} ]`);
             }
-            return `[ Name: ${shoppers[i].name} | Amount: \$${shoppers[i].amount} | Discount: \$0 | Subtotal: \$${shoppers[i].amount} ]`;
         }
-    })
+    // })
 
     /* ##################################################################### */ /* */
 
