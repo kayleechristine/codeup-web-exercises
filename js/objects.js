@@ -1,7 +1,7 @@
 (function() {
     "use strict";
 
-    /* ##################################################################### */
+    /* ##################################################################### */ /* Complete */
 
     /**
      * TODO:
@@ -14,7 +14,15 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    /* ##################################################################### */
+    let person = {
+        firstName: "Kaylee",
+        lastName: "Morris"
+    }
+
+    console.log(person.firstName);
+    console.log(person.lastName);
+
+    /* ##################################################################### */ /* Complete */
 
     /**
      * TODO:
@@ -26,7 +34,13 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    /* ##################################################################### */
+    person.sayHello = function () {
+        return `Hello from ${person.firstName} ${person.lastName}!`;
+    }
+
+    console.log(person.sayHello());
+
+    /* ##################################################################### */ /* */
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -48,7 +62,7 @@
     //     {name: 'George', amount: 320}
     // ];
 
-    /* ##################################################################### */
+    /* ##################################################################### */ /* */
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -63,7 +77,7 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    /* ##################################################################### */
+    /* ##################################################################### */ /* */
 
     /**
      * TODO:
