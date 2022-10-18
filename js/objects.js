@@ -56,11 +56,26 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    let shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    // console.log(shoppers.length);
+
+    shoppers.forEach(function(shopper) {
+        for (let i = 0; i < shoppers.length; i++) {
+            console.log(`Welcome, ${shoppers[i].name}!`);
+            console.log("Here's your receipt:");
+            if (shoppers[i].amount >= 200) {
+                let discount = shoppers[i].amount * 0.12;
+                let total = shoppers[i].amount - discount;
+                return `[ Name: ${shoppers[i].name} | Amount: \$${shoppers[i].amount} | Discount: \$${discount} | Subtotal: \$${total} ]`;
+            }
+            return `[ Name: ${shoppers[i].name} | Amount: \$${shoppers[i].amount} | Discount: \$0 | Subtotal: \$${shoppers[i].amount} ]`;
+        }
+    })
 
     /* ##################################################################### */ /* */
 
