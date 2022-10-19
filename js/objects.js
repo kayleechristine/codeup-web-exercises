@@ -40,7 +40,7 @@
 
     console.log(person.sayHello());
 
-    /* ##################################################################### */ /* */
+    /* ##################################################################### */ /* Complete */
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -77,7 +77,7 @@
         }
     // })
 
-    /* ##################################################################### */ /* */
+    /* ##################################################################### */ /* Complete */
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -92,7 +92,44 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    /* ##################################################################### */ /* */
+    let books = [
+        {
+            title: "The Final Empire",
+            author: "Brandon Sanderson",
+            genre: "Fantasy"
+        },
+        {
+            title: "Shadow and Bone",
+            author: "Leigh Bardugo",
+            genre: "Fantasy"
+        },
+        {
+            title: "Six of Crows",
+            author: "Leigh Bardugo",
+            genre: "Fantasy"
+        },
+        {
+            title: "The Way of Kings",
+            author: "Brandon Sanderson",
+            genre: "Fantasy"
+        },
+        {
+            title: "Truly Devious",
+            author: "Maureen Johnson",
+            genre: "Murder Mystery"
+        },
+        {
+            title: "One of Us is Lying",
+            author: "Maureen Johnson",
+            genre: "Murder Mystery"
+        }
+    ]
+
+    console.log(`${books[2].title} is a ${books[2].genre.toLowerCase()} book written by ${books[2].author}.`);
+    console.log(`${books[3].title} is a ${books[3].genre.toLowerCase()} book written by ${books[3].author}.`);
+    console.log(`${books[5].title} is a ${books[5].genre.toLowerCase()} book written by ${books[5].author}.`);
+
+    /* ##################################################################### */ /* Complete */
 
     /**
      * TODO:
@@ -118,6 +155,16 @@
      *      ---
      *      ...
      */
+
+    function favoriteBooks() {
+        for (let i = 0; i < books.length; i++) {
+            console.log(`Book #${i + 1} \n Title: ${books[i].title} \n Genre: ${books[i].genre} \n Author: ${books[i].author} \n ---`);
+        } return '';
+    }
+
+    favoriteBooks();
+
+    /* ##################################################################### */ /* BONUS */
 
     /**
      * Bonus:
