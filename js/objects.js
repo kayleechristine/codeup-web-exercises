@@ -197,21 +197,26 @@
      */
 
     function createBook(title, genre, author) {
+        author = author.split(" ");
         books.push( {
             title: title,
             genre: genre,
-            author: author
+            author: {
+                firstName: author[0],
+                lastName: author[1]
+            }
         })
         console.log(`${title} has been added to your favorites list.`)
     }
 
     createBook("The Bad Beginning: Or, Orphans!", "Mystery", "Daniel Handler");
 
-    // favoriteBooks(); // Now logs the new book at the end of the list
+    favoriteBooks(); // Now logs the new book at the end of the list
 
     function showBookInfo(title) {
         let index = books.findIndex(book => book.title === title);
-        return `${books[index].title} is a ${books[index].genre.toLowerCase()} book written by ${books[index].author}.`;
+        let author = books[index].author.firstName + " " + books[index].author.lastName;
+        return `${books[index].title} is a ${books[index].genre.toLowerCase()} book written by ${author}.`;
     }
 
     // console.log(showBookInfo("The Way of Kings"));
