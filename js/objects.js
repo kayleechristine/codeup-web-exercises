@@ -95,32 +95,50 @@
     let books = [
         {
             title: "The Final Empire",
-            author: "Brandon Sanderson",
+            author: {
+                firstName: "Brandon",
+                lastName: "Sanderson"
+            },
             genre: "Fantasy"
         },
         {
             title: "Shadow and Bone",
-            author: "Leigh Bardugo",
+            author: {
+                firstName: "Leigh",
+                lastName: "Bardugo"
+            },
             genre: "Fantasy"
         },
         {
             title: "Six of Crows",
-            author: "Leigh Bardugo",
+            author: {
+                firstName: "Leigh",
+                lastName: "Bardugo"
+            },
             genre: "Fantasy"
         },
         {
             title: "The Way of Kings",
-            author: "Brandon Sanderson",
+            author: {
+                firstName: "Brandon",
+                lastName: "Sanderson"
+            },
             genre: "Fantasy"
         },
         {
             title: "Truly Devious",
-            author: "Maureen Johnson",
+            author: {
+                firstName: "Maureen",
+                lastName: "Johnson"
+            },
             genre: "Murder Mystery"
         },
         {
             title: "One of Us is Lying",
-            author: "Maureen Johnson",
+            author: {
+                firstName: "Karen",
+                lastName: "McManus"
+            },
             genre: "Murder Mystery"
         }
     ]
@@ -158,7 +176,8 @@
 
     function favoriteBooks() {
         for (let i = 0; i < books.length; i++) {
-            console.log(`Book #${i + 1} \n Title: ${books[i].title} \n Genre: ${books[i].genre} \n Author: ${books[i].author} \n ---`);
+            let author = `${books[i].author.firstName} ${books[i].author.lastName}`;
+            console.log(`Book #${i + 1} \n Title: ${books[i].title} \n Genre: ${books[i].genre} \n Author: ${author} \n ---`);
         } return '';
     }
 
