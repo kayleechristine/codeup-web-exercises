@@ -164,7 +164,7 @@
 
     favoriteBooks();
 
-    /* ##################################################################### */ /* BONUS */
+    /* ##################################################################### */ /* BONUS */ /* Complete */
 
     /**
      * Bonus:
@@ -190,11 +190,20 @@
 
     // favoriteBooks(); // Now logs the new book at the end of the list
 
-    function showBookInfo() {
-        return books.indexOf(books.title);
+    function showBookInfo(title) {
+        let index = books.findIndex(book => book.title === title);
+        return `${books[index].title} is a ${books[index].genre.toLowerCase()} book written by ${books[index].author}.`;
     }
 
-    console.log(showBookInfo("The Way of Kings"));
+    // console.log(showBookInfo("The Way of Kings"));
+
+    function favBookInfo() {
+        for (let i = 0; i < books.length; i++) {
+            console.log(showBookInfo(books[i].title));
+        } return '';
+    }
+
+    favBookInfo();
 
 
 
