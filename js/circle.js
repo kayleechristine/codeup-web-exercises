@@ -18,7 +18,7 @@
             // TODO: complete this method.
             let area = circle.getArea(this.radius);
             // If doRounding is true, round the result to the nearest integer.
-            if (doRounding === true) {
+            if (doRounding) {
                 return console.log(`Approx. area of a circle with radius: ${this.radius}, is ${Math.round(area)}`);
             }
             // Otherwise, output the complete value.
