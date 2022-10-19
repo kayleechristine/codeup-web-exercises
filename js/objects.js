@@ -125,9 +125,9 @@
         }
     ]
 
-    console.log(`${books[2].title} is a ${books[2].genre.toLowerCase()} book written by ${books[2].author}.`);
-    console.log(`${books[3].title} is a ${books[3].genre.toLowerCase()} book written by ${books[3].author}.`);
-    console.log(`${books[5].title} is a ${books[5].genre.toLowerCase()} book written by ${books[5].author}.`);
+    // console.log(`${books[2].title} is a ${books[2].genre.toLowerCase()} book written by ${books[2].author}.`);
+    // console.log(`${books[3].title} is a ${books[3].genre.toLowerCase()} book written by ${books[3].author}.`);
+    // console.log(`${books[5].title} is a ${books[5].genre.toLowerCase()} book written by ${books[5].author}.`);
 
     /* ##################################################################### */ /* Complete */
 
@@ -176,5 +176,27 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(title, genre, author) {
+        books.push( {
+            title: title,
+            genre: genre,
+            author: author
+        })
+        console.log(`${title} has been added to your favorites list.`)
+    }
+
+    createBook("The Bad Beginning: Or, Orphans!", "Mystery", "Daniel Handler");
+
+    // favoriteBooks(); // Now logs the new book at the end of the list
+
+    function showBookInfo() {
+        return books.indexOf(books.title);
+    }
+
+    console.log(showBookInfo("The Way of Kings"));
+
+
+
 
 })();
