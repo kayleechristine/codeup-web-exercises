@@ -73,8 +73,32 @@
 
 // Create a function named "typePrinter" that accepts an array as an input, and logs the data type of each element to the console.
 
-function typePrinter(array) {
-    return array.map(element => typeof(element));
+// function typePrinter(array) {
+//     return array.map(element => typeof(element));
+// }
+//
+// console.log(typePrinter([true, "Icon", 25, "66", false, 0]));
+
+/* Create a function named "average" that takes in an array of numeric values, and returns the average. If any of the
+* elements in the array are non-numeric, the function should return false. */
+
+const isNumeric = (num) => !isNaN(parseFloat(num));
+
+function average(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (isNumeric(array[i])) {
+            sum += Number(array[i]);
+        } else {
+            return false;
+        }
+    }
+    return sum / array.length;
 }
 
-console.log(typePrinter([true, "Icon", 25, "66", false, 0]));
+//     Ex:
+console.log(average(["6", 5, 3, 2, 9]) )                      // returns 5
+console.log(average([true, 6, 9, 3, 10]))                   // returns false
+console.log(average(["Codey the Duck", 10, 3, false])) // returns false
+console.log(average([1, 2, 3, 4, 5]))                        // returns 3
+console.log(average(["5.5", "five", 3, 6, 7]))                // returns false
