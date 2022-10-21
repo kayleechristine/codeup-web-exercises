@@ -6,35 +6,35 @@
 </head>
 <body>
     <section id="form">
-        <h1>Forms - WIP</h1>
+        <h1>Forms - Complete</h1>
         <form method="POST" action="https://request-inspector.glitch.me/">
             <p>
                 <label for="email">Email:</label>
-                <input type="text" name="email" id="email" placeholder="example@domain.com">
+                <input type="email" name="email" id="email" placeholder="example@domain.com">
                 <label for="password">Password:</label>
                 <input type="password" name="password" id="password" placeholder="password">
             </p>
             <p>
-                <label for="bio">Bio:</label> <br>
+                <label for="bio">Bio:</label><br>
                 <textarea name="bio" id="bio" style="width: 30%" placeholder="Tell us a little about yourself..."></textarea>
             </p>
+            <p>How did you hear about us?</p>
+                <input type="checkbox" name="marketing" value="billboard" id="billboard"> <label for="billboard">Billboard</label> <br>
+                <input type="checkbox" name="marketing" value="radio" id="radio"> <label for="radio">Radio Ad</label> <br>
+                <input type="checkbox" name="marketing" value="online" id="online"> <label for="online">Online Ad</label> <br>
+                <input type="checkbox" name="marketing" value="other" id="other"> <label for="other">Other</label> <br>
             <p>
-                How did you hear about us?<br>
-                <input type="checkbox" name="marketing" value="billboard"> Billboard <br>
-                <input type="checkbox" name="marketing" value="radio"> Radio Advertisement <br>
-                <input type="checkbox" name="marketing" value="online"> Online Advertisement <br>
-                <input type="checkbox" name="marketing" value="other"> Other <br>
-            </p>
-            <p>
-                What web browser are you using? <br>
-                <select name="web_browser">
-                    <option value="edge">Edge</option>
+                <label for="web_browser">What web browser are you using?</label>
+                <select name="web_browser" id="web_browser">
                     <option value="chrome" selected>Chrome</option>
+                    <option value="edge" disabled>Edge</option>
                     <option value="firefox">Firefox</option>
+                    <option value="safari">Safari</option>
                 </select>
             </p>
             <button type="submit">Submit!</button>
         </form>
+        <hr>
     </section>
 </body>
 </html>
