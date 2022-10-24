@@ -1,7 +1,52 @@
 .fancy-header {
-    color: #010b4f; /* single line comment */
+    color: #81d6a7; /* single line comment */
     text-decoration: underline;
 }
-h2 {
-    color: #192d88;
+h1, h2 {
+    color: #70cede;
+    text-decoration: underline;
+}
+h1 {
+    text-align: center;
+}
+html {
+    background-color: #0f143d;
+    background-image: url("../img/vecteezy_cyber-network-protection-future-technology-background_.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    color: #aeddf4;
+    font-family: 'Roboto Slab';
+    font-size: 16px;
+}
+ul {
+    list-style: square;
+}
+table {
+    font-family: 'Roboto Slab';
+    font-size: 16px;
+    border-collapse: collapse;
+    width: 50%
+}
+td, th {
+    border: none;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #3d4f9f;
+}
+tr:nth-child(odd) {
+    background-color: #27286a;
+}
+tr:last-child {
+    background-color: #0f143d;
+}
+tr:hover {
+    background-color: #607ee0;
+}
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0f143d;
 }
