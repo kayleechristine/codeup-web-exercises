@@ -50,3 +50,15 @@ th {
     text-align: left;
     background-color: #0f143d;
 }
+a:link {
+    color: #70cfde;
+}
+a:visited {
+    color: #0f143d;
+}
+a:hover {
+    color: #607ee0;
+}
+a:active {
+    color: #d524dd;
+}
