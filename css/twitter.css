@@ -8,6 +8,10 @@
 * {
     box-sizing: border-box;
 }
+h4 {
+    margin-block-start: 0.5em;
+    margin-block-end: 1em;
+}
 body, html {
     background-color: var(--main-bg);
     height: 100%;
@@ -63,7 +67,48 @@ a {
 }
 .profile-details {
     float: left;
-    width: 25%;
+    width: calc(25% - 1em);
+    margin: 0 0.5em;
+}
+.profile-items {
+    list-style: none;
+    padding: 0;
+}
+.profile-entry {
+    margin: 0.5em;
+}
+.timeline {
+    float: left;
+    width: calc(50% - 1em);
+    margin: 0 0.5em;
+}
+.who-to-follow {
+    float: right;
+    width: calc(25% - 1em);
+    margin: 0 0.5em;
+}
+.sidebar {
+    margin-bottom: 0.5em;
+}
+.container {
+    margin-top: 2em;
+}
+.media {
+    width: 100%;
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--separator-color);
+    overflow: auto;
+    padding-left: 1em;
+}
+.media-image {
+    max-width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+.media-body {
+    width: calc(100% - 50px);
+    float: left;
+    padding: 1em;
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -86,4 +131,7 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+form {
+    padding-right: 0.5em;
 }
