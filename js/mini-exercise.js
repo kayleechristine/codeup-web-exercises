@@ -97,8 +97,25 @@ function average(array) {
 }
 
 //     Ex:
-console.log(average(["6", 5, 3, 2, 9]) )                      // returns 5
-console.log(average([true, 6, 9, 3, 10]))                   // returns false
-console.log(average(["Codey the Duck", 10, 3, false])) // returns false
-console.log(average([1, 2, 3, 4, 5]))                        // returns 3
-console.log(average(["5.5", "five", 3, 6, 7]))                // returns false
+// console.log(average(["6", 5, 3, 2, 9]) )                      // returns 5
+// console.log(average([true, 6, 9, 3, 10]))                   // returns false
+// console.log(average(["Codey the Duck", 10, 3, false])) // returns false
+// console.log(average([1, 2, 3, 4, 5]))                        // returns 3
+// console.log(average(["5.5", "five", 3, 6, 7]))                // returns false
+
+// Create a function named "filterNegativity" that accepts an array of numbers, and returns an array with only positive numbers.
+//
+//     Ex: filterNegativity([5, -6, 2, 0, -5, -13]) // returns [5, 2, 0,]
+
+function filterNegativity(array) {
+    let positive = [];
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] >= 0) {
+            positive.push(array[i]);
+        }
+    }
+    return positive;
+}
+
+console.log(filterNegativity([1, 2, 3, -4]));
+console.log(filterNegativity([1, -2, 3, 4]));
