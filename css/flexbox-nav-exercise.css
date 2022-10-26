@@ -24,15 +24,14 @@ ul {
 }
 li {
     padding: 0.5em;
-    font-family: "Work Sans";
-    /* the font will not bold. */
+    font-family: 'Work Sans', sans-serif;
     font-size: 14px;
+    font-weight: bold;
 }
 a {
     display: inline-block;
     color: #000;
     text-decoration: none;
-    font-weight: bold;
 }
 a:hover {
     color: blue;
