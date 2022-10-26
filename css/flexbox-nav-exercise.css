@@ -1,15 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
 nav {
-    background: lightgrey;
+    background: #c1c1c1;
     display: flex;
+    justify-content: center;
+    margin: 0;
 }
 .title {
-
+    margin: auto;
+    font-family: "Montserrat";
+    font-size: 32px;
+    padding: 0.2em 0;
 }
 ul {
     display: flex;
+    justify-content: space-around;
     padding-inline-start: 0;
     list-style: none;
 }
 li {
+    padding: 0.5em;
+    font-family: "Work Sans";
+    /* the font will not bold. */
+    font-size: 14px;
+}
+a {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    color: blue;
+}
+.right {
+    padding-left: 5em;
+    padding-right: 0.5em;
+}
+.left {
+    padding-left: 0.25em;
+}
+
+.left a {
 
 }
