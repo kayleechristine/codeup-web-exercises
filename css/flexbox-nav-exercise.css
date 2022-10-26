@@ -1,3 +1,15 @@
-.nav {
+nav {
+    background: lightgrey;
+    display: flex;
+}
+.title {
+
+}
+ul {
+    display: flex;
+    padding-inline-start: 0;
+    list-style: none;
+}
+li {
 
 }
