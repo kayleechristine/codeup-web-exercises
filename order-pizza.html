@@ -133,27 +133,23 @@
       </div>
       <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <div class="card bg-white mb-3">
-          <div class="card-header text-white bg-primary">Choose Size and Crust</div>
+          <div class="card-header text-white bg-primary">Choose Cheese and Sauce</div>
           <div class="card-body">
             <div class="card">
               <div class="card-header">
-                Hand Tossed
+                Cheese
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Garlic seasoned crust with a rich, buttery taste.
+                  How much?
                 </li>
                 <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="selectSize" id="smClassic">
-                  <label class="form-check-label" for="smClassic">
-                    Small (10")
-                  </label>
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medClassic">
-                  <label class="form-check-label" for="medClassic">
-                    Medium (12")
-                  </label>
+                  <select class="form-select">
+                    <option>Light</option>
+                    <option selected>Normal</option>
+                    <option>Extra</option>
+                    <option>Double</option>
+                  </select>
                 </li>
               </ul>
             </div>
@@ -161,56 +157,78 @@
           <div class="card-body">
             <div class="card">
               <div class="card-header">
-                Crispy Thin
+                Sauce
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Thin enough for optimum crispy to crunchy ratio.
+                  What type?
                 </li>
                 <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medThin">
-                  <label class="form-check-label" for="medThin">
-                    Medium (12")
-                  </label>
+                  <select class="form-select">
+                    <option selected>Tomato</option>
+                    <option>Marinara</option>
+                    <option>BBQ</option>
+                    <option>Alfredo</option>
+                  </select>
                 </li>
                 <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="selectSize" id="lgThin">
-                  <label class="form-check-label" for="lgThin">
-                    Large (14")
-                  </label>
+                  How much?
+                </li>
+                <li class="list-group-item">
+                  <select class="form-select">
+                    <option>Light</option>
+                    <option selected>Normal</option>
+                    <option>Extra</option>
+                  </select>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="card-footer bg-light">
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button class="btn btn-primary me-md-2" type="button">Next Step ></button>
+          <div class="card-footer bg-light d-md-flex justify-content-md-end">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-primary">< Previous</button>
+              <button type="button" class="btn btn-primary">Next ></button>
             </div>
           </div>
         </div>
       </div>
       <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
         <div class="card bg-white mb-3">
-          <div class="card-header text-white bg-primary">Choose Size and Crust</div>
+          <div class="card-header text-white bg-primary">Choose Toppings</div>
           <div class="card-body">
             <div class="card">
               <div class="card-header">
-                Hand Tossed
+                Choose Meats
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Garlic seasoned crust with a rich, buttery taste.
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="selectSize" id="smClassic">
-                  <label class="form-check-label" for="smClassic">
-                    Small (10")
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="pepperoni">
+                  <label class="form-check-label" for="pepperoni">
+                    Pepperoni
                   </label>
                 </li>
                 <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medClassic">
-                  <label class="form-check-label" for="medClassic">
-                    Medium (12")
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="sausage">
+                  <label class="form-check-label" for="sausage">
+                    Sausage
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="ham">
+                  <label class="form-check-label" for="ham">
+                    Ham
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="philly">
+                  <label class="form-check-label" for="philly">
+                    Philly Steak
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="bacon">
+                  <label class="form-check-label" for="bacon">
+                    Bacon
                   </label>
                 </li>
               </ul>
@@ -219,22 +237,37 @@
           <div class="card-body">
             <div class="card">
               <div class="card-header">
-                Crispy Thin
+                Choose Non-Meats
               </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Thin enough for optimum crispy to crunchy ratio.
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medThin">
-                  <label class="form-check-label" for="medThin">
-                    Medium (12")
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="peppers">
+                  <label class="form-check-label" for="peppers">
+                    Green Peppers
                   </label>
                 </li>
                 <li class="list-group-item">
-                  <input class="form-check-input me-1" type="radio" name="selectSize" id="lgThin">
-                  <label class="form-check-label" for="lgThin">
-                    Large (14")
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="mushrooms">
+                  <label class="form-check-label" for="mushrooms">
+                    Mushrooms
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="onions">
+                  <label class="form-check-label" for="onions">
+                    Onions
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="jalapeno">
+                  <label class="form-check-label" for="jalapeno">
+                    Jalapeño Peppers
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" name="meats" id="spinach">
+                  <label class="form-check-label" for="spinach">
+                    Spinach
                   </label>
                 </li>
               </ul>
@@ -242,7 +275,7 @@
           </div>
           <div class="card-footer bg-light">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button class="btn btn-primary me-md-2" type="button">Next Step ></button>
+              <button class="btn btn-primary me-md-2" type="button">Checkout <i class="fa-solid fa-cart-shopping"></i></button>
             </div>
           </div>
         </div>
