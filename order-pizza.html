@@ -41,28 +41,73 @@
     </div>
   </nav>
 <!--Content Area-->
-  <div class="container">
+  <div class="container content">
     <br>
   <!--Pizza Planet Image-->
     <div class="d-md-flex jumbotron">
       <div class="img-overlay">
         <h1>Welcome to Pizza Planet!</h1>
+        <video class="" autoplay loop>
+          <source src="res/video.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
     <br>
   <!--Build Your Own Pizza!-->
     <h2>Build Your Own Pizza!</h2>
-    <p>
-      <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Link with href
-      </a>
-      <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Button with data-bs-target
-      </button>
-    </p>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+            <span class="badge rounded-pill text-bg-secondary">1</span> Size and Crust</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+          <span class="badge rounded-pill text-bg-secondary">2</span> Cheese and Sauce</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">
+          <span class="badge rounded-pill text-bg-secondary">3</span> Toppings</button>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="card bg-white mb-3">
+          <div class="card-header text-white bg-primary">Choose Size and Crust</div>
+          <div class="card-body">
+            <div class="card">
+              <div class="card-header">
+                Hand Tossed
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
+                <li class="list-group-item">Small (10")</li>
+                <li class="list-group-item">Medium (12")</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card">
+              <div class="card-header">
+                Crispy Thin
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Thin enough for the optimum crispy to crunchy ratio.</li>
+                <li class="list-group-item">Medium (12")</li>
+                <li class="list-group-item">Large (14")</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer bg-light">Footer</div>
+        </div>
+      </div>
+      <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        blah
+      </div>
+      <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+        blah
       </div>
     </div>
 
