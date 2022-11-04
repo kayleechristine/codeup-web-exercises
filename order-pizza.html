@@ -46,7 +46,7 @@
   <!--Pizza Planet Image-->
     <div class="d-md-flex jumbotron">
       <div class="img-overlay">
-        <h1>Welcome to Pizza Planet!</h1>
+        <h1 class="mt-5">Welcome to Pizza Planet!</h1>
         <video class="" autoplay loop>
           <source src="res/video.mp4" type="video/mp4">
         </video>
@@ -54,7 +54,7 @@
     </div>
     <br>
   <!--Build Your Own Pizza!-->
-    <h2>Build Your Own Pizza!</h2>
+    <h2 class="mt-5">Build Your Own Pizza!</h2>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
@@ -82,9 +82,21 @@
                 Hand Tossed
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
-                <li class="list-group-item">Small (10")</li>
-                <li class="list-group-item">Medium (12")</li>
+                <li class="list-group-item">
+                  Garlic seasoned crust with a rich, buttery taste.
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="smClassic">
+                  <label class="form-check-label" for="smClassic">
+                  Small (10")
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medClassic">
+                  <label class="form-check-label" for="medClassic">
+                  Medium (12")
+                  </label>
+                </li>
               </ul>
             </div>
           </div>
@@ -94,20 +106,146 @@
                 Crispy Thin
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Thin enough for the optimum crispy to crunchy ratio.</li>
-                <li class="list-group-item">Medium (12")</li>
-                <li class="list-group-item">Large (14")</li>
+                <li class="list-group-item">
+                  Thin enough for optimum crispy to crunchy ratio.
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medThin">
+                  <label class="form-check-label" for="medThin">
+                    Medium (12")
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="lgThin">
+                  <label class="form-check-label" for="lgThin">
+                    Large (14")
+                  </label>
+                </li>
               </ul>
             </div>
           </div>
-          <div class="card-footer bg-light">Footer</div>
+          <div class="card-footer bg-light">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-primary me-md-2" type="button">Next Step ></button>
+            </div>
+          </div>
         </div>
       </div>
       <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        blah
+        <div class="card bg-white mb-3">
+          <div class="card-header text-white bg-primary">Choose Size and Crust</div>
+          <div class="card-body">
+            <div class="card">
+              <div class="card-header">
+                Hand Tossed
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Garlic seasoned crust with a rich, buttery taste.
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="smClassic">
+                  <label class="form-check-label" for="smClassic">
+                    Small (10")
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medClassic">
+                  <label class="form-check-label" for="medClassic">
+                    Medium (12")
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card">
+              <div class="card-header">
+                Crispy Thin
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Thin enough for optimum crispy to crunchy ratio.
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medThin">
+                  <label class="form-check-label" for="medThin">
+                    Medium (12")
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="lgThin">
+                  <label class="form-check-label" for="lgThin">
+                    Large (14")
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer bg-light">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-primary me-md-2" type="button">Next Step ></button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-        blah
+        <div class="card bg-white mb-3">
+          <div class="card-header text-white bg-primary">Choose Size and Crust</div>
+          <div class="card-body">
+            <div class="card">
+              <div class="card-header">
+                Hand Tossed
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Garlic seasoned crust with a rich, buttery taste.
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="smClassic">
+                  <label class="form-check-label" for="smClassic">
+                    Small (10")
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medClassic">
+                  <label class="form-check-label" for="medClassic">
+                    Medium (12")
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card">
+              <div class="card-header">
+                Crispy Thin
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Thin enough for optimum crispy to crunchy ratio.
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="medThin">
+                  <label class="form-check-label" for="medThin">
+                    Medium (12")
+                  </label>
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="radio" name="selectSize" id="lgThin">
+                  <label class="form-check-label" for="lgThin">
+                    Large (14")
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-footer bg-light">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-primary me-md-2" type="button">Next Step ></button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

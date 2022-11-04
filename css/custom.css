@@ -19,6 +19,7 @@ video {
     height: 400px;
     object-fit: cover;
     display: block;
+    border-radius: 8px;
 }
 .img-overlay {
     flex-grow: 1; /* was struggling to get the header to center after using flex-grow to expand the title. */
