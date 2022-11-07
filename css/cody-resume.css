@@ -42,7 +42,8 @@ hr {
     50% { border-color: orange }
 }
 .contact {
-    padding: 10px;
+    width: auto;
+    padding: 10px 20px;
     border-radius: 8px;
     background: #4CB6E1;
     color: #fff;
@@ -51,4 +52,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+.icon {
+    margin-right: 0.5rem;
 }
