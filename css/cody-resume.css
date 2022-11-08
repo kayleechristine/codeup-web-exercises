@@ -1,6 +1,13 @@
+:root {
+    --text1: #294b66;
+    --text2: #106497;
+    --text3: #106497;
+    --accent1: #FFB703;
+    --accent2: #00B4D8;
+}
 body {
     background: #CCEAF6;
-    color: #294b66;
+    color: var(--text1);
     font-family: "Noto Sans", sans-serif;
 }
 h1 {
@@ -8,11 +15,11 @@ h1 {
     font-size: 38px;
 }
 h2 {
-    color: #166281;
+    color: var(--text2);
     font-weight: 600;
 }
 h3 {
-    color: #106497;
+    color: var(--text3);
     font-weight: 800;
     font-size: 21px;
     text-decoration: underline wavy;
@@ -20,14 +27,14 @@ h3 {
     text-underline-offset: 5px;
 }
 hr {
-    border-color: #fcb706;
+    border-color: var(--accent1);
     border-width: 6px;
     opacity: 100;
 }
 .button {
     padding: 10px 20px;
     border-radius: 8px;
-    background: #00B4D8;
+    background: var(--accent2);
     color: #fff;
     font-size: 16px;
 }
@@ -42,17 +49,17 @@ hr {
     height: 300px;
     width: 300px;
     object-fit: cover;
-    border: solid 10px #FFB703;
+    border: solid 10px var(--accent1);
 }
 .code {
-    color: #00B4D8;
+    color: var(--accent2);
 }
 .typewriter {
-    color: #023047;
+    color: var(--text1);
     font-family: 'Noto Sans';
     font-weight: 600;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
+    border-right: .15em solid var(--accent1); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .12em; /* Adjust as needed */
@@ -68,5 +75,5 @@ hr {
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: orange }
+    50% { border-color: var(--accent1) }
 }
