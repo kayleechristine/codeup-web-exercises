@@ -38,5 +38,24 @@ $(function(){
         // Using the multiple selectors methodology to change all the highlighted elements at once
         $('h1, p, li').css('background-color', 'yellow');
 
+        // Changes the background to chartreuse when the h1 header is clicked
+        $('h1').click(function(e) {
+            $('html').css('background-color', 'chartreuse');
+        });
+
+        // Changes the font size of all paragraphs to 18px when they are double-clicked
+        $('p').dblclick(function(e) {
+            $(this).css('font-size', '18px');
+        });
+
+        // Changes the li elements color to red when hovered over
+        $('li').hover(
+            function(e) {
+                $(this).css('color', 'red');
+            },
+            function(e) {
+                $(this).css('color', 'black');
+        });
+
     });
 })();
