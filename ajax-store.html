@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+    <style>
+        table {
+            width: 25%;
+        }
+        th {
+            text-decoration: underline;
+        }
+        td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Tool Store</h1>
+    <!--Content-->
+    <table id="products">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Categories</th>
+            </tr>
+        </thead>
+        <tbody id="insertProducts"></tbody>
+    </table>
+
+    <!--jQuery Link-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!--Custom Script-->
+    <script>
+    (function() {
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
+        $.get("data/inventory.json").done(function(data) {
+            // Your data should come back as a JSON object; use console.log() to inspect its contents and fields
+            console.log(data);
+            let tdata = '';
+            // TODO: Take the data from inventory.json and append it to the products table
+            // HINT: You will want to target #insertProducts for your new HTML elements
+            data.forEach(function(tool) {
+                let category = tool.categories.join("<br>");
+                tdata += `<tr> <td>${tool.title}</td>  <td>${tool.quantity}</td> <td>${tool.price}</td> <td>${category}</td> </tr>`
+            });
+            return $('#insertProducts').html(tdata);
+        });
+    })();
+    </script>
+
+</body>
+</html>
