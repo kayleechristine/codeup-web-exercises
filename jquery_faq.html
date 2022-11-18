@@ -9,99 +9,155 @@
     <style>
       body {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
-        align-items: center;
+        /*align-items: center;*/
       }
       .invisible {
         visibility: hidden;
       }
-      .highlighted {
+      .highlight {
         background-color: chartreuse;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .blue {
+        color: blue;
       }
       .fa-solid {
         width: 50px;
       }
+      .faq {
+        width: 60%;
+      }
+      .coffee-lists {
+        width: 35%;
+        clear: both;
+      }
     </style>
 </head>
 <body>
-  <!--Main Content-->
-  <h1>10 FAQs About Coffee</h1>
-  <dl>
-    <dt>
-      <strong>1.</strong> How much caffeine is in coffee? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      On average there is around 95mg of caffeine in a cup of coffee. With accurate coffee brewing we dissolve (or extract) the same percentage of coffee regardless of the brewing method.<br><br>
-    </dd>
-    <dt>
-      <strong>2.</strong> Do light roasted and dark roasted have different levels of caffeine? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      Although dark coffee may taste stronger and some people may tell you that light roasted coffee preserves more caffeine the truth is that neither style of roasting reaches a high enough temperature to destroy caffeine. That is - the caffeine content of each is more or less the same.
-    </dd>
-    <dt>
-      <strong>3.</strong> Does coffee have more caffeine than tea? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      The short answer is yes coffee, on average, has about twice as much caffeine as black tea which is generally considered to have the highest caffeine content of the various forms of tea (green, white, oolong etc).
-    </dd>
-    <dt>
-      <strong>4.</strong> How many cups of coffee a day should you drink? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      Up to 400mg of coffee is generally considered safe although sensitivity to caffeine can vary from person to person. If you notice tremors, anxiety, agitation, headaches/ dizziness or upset stomach the chances are your common sense should tell you to pull back.
-    </dd>
-    <dt>
-      <strong>5.</strong> Can you drink coffee when pregnant? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      The NHS recommends monitoring caffeine consumption during pregnancy to 200mg (about 2 cups) per day.<br><br>
-    </dd>
-    <dt>
-      <strong>6.</strong> Is coffee good for you? What are the benefits? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      Coffee contains caffeine, the most commonly consumed stimulant in the world and is widely used to benefit alertness as well as physical performance. It is also commonly linked to weight loss as caffeine can also increase a person’s metabolic rate by anywhere between 3-11%.
-    </dd>
-    <dt>
-      <strong>7.</strong> How many calories are in coffee? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      Black coffee has 0 calories. 250ml of full fat milk on the other hand contains around 100 calories which means  a flat white with 30ml of espresso and around 140ml of full fat milk contains around 60 calories or around 70 calories with a milk alternative such as oat milk.
-    </dd>
-    <dt>
-      <strong>8.</strong> Is coffee a laxative? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      The short answer is that coffee may have a laxative effect on some people but that there is inconclusive evidence to suggest that this is any more direct than other common beverages with one exception potentially being people suffering from IBS.
-    </dd>
-    <dt>
-      <strong>9.</strong> Does coffee dehydrate you? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      While caffeinated beverages, including coffee, may have mild diuretic effects - causing the need to urinate - they don’t appear to cause dehydration. That is they don’t cause fluid loss in excess of the volumed ingested and have no overall impact on dehydration.
-    </dd>
-    <dt>
-      <strong>10.</strong> What country produces the most coffee? <i class="fa-solid fa-angle-down"></i>
-    </dt>
-    <dd class="invisible">
-      Brazil currently produces around 40% of the world’s total coffee supply (although at the beginning of the 20th century accounted for as much as 80%!). This is followed in order by Vietnam, Colombia, Indonesia, Ethiopia, Honduras, India, Uganda, Mexico and Guatemala.
-    </dd>
-  </dl>
+  <!--Frequently Asked Questions-->
+  <div class="faq">
+    <h1>10 FAQs About Coffee</h1>
+    <dl>
+      <dt>
+        <strong>1.</strong> How much caffeine is in coffee? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        On average there is around 95mg of caffeine in a cup of coffee. With accurate coffee brewing we dissolve (or extract) the same percentage of coffee regardless of the brewing method.
+      </dd>
+      <dt>
+        <strong>2.</strong> Do light roasted and dark roasted have different levels of caffeine? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        Although dark coffee may taste stronger and some people may tell you that light roasted coffee preserves more caffeine the truth is that neither style of roasting reaches a high enough temperature to destroy caffeine.
+      </dd>
+      <dt>
+        <strong>3.</strong> Does coffee have more caffeine than tea? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        The short answer is yes coffee, on average, has about twice as much caffeine as black tea which is generally considered to have the highest caffeine content of the various forms of tea (green, white, oolong etc).
+      </dd>
+      <dt>
+        <strong>4.</strong> How many cups of coffee a day should you drink? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        Up to 400mg of coffee is generally considered safe although sensitivity to caffeine can vary from person to person. If you notice negative side effects your common sense should tell you to pull back.
+      </dd>
+      <dt>
+        <strong>5.</strong> Can you drink coffee when pregnant? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        The NHS recommends monitoring caffeine consumption during pregnancy to 200mg (about 2 cups) per day.<br><br>
+      </dd>
+      <dt>
+        <strong>6.</strong> Is coffee good for you? What are the benefits? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        Coffee contains caffeine, the most commonly consumed stimulant in the world and is widely used to benefit alertness as well as physical performance. It is also commonly linked to weight loss as caffeine can also increase a person’s metabolic rate.
+      </dd>
+      <dt>
+        <strong>7.</strong> How many calories are in coffee? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        Black coffee has 0 calories. 250ml of full fat milk on the other hand contains around 100 calories which means  a flat white with 30ml of espresso and around 140ml of full fat milk contains around 60 calories.
+      </dd>
+      <dt>
+        <strong>8.</strong> Is coffee a laxative? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        The short answer is that coffee may have a laxative effect on some people but that there is inconclusive evidence to suggest that this is any more direct than other common beverages with one exception potentially being people suffering from IBS.
+      </dd>
+      <dt>
+        <strong>9.</strong> Does coffee dehydrate you? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        While caffeinated beverages, including coffee, may have mild diuretic effects - causing the need to urinate - they don’t appear to cause dehydration.
+      </dd>
+      <dt>
+        <strong>10.</strong> What country produces the most coffee? <i class="fa-solid fa-angle-down"></i>
+      </dt>
+      <dd class="invisible">
+        Brazil currently produces around 40% of the world’s total coffee supply (although at the beginning of the 20th century accounted for as much as 80%!). This is followed in order by Vietnam, Colombia, Indonesia, Ethiopia, Honduras, India, Uganda, Mexico and Guatemala.
+      </dd>
+    </dl>
+  </div>
+  <!--Types of Coffee-->
+  <div class="coffee-lists">
+    <h1>Coffee Blends by Roast</h1>
+    <button id="highlight-end" type="button">Highlight List End</button>
+    <h3>Light Roasts</h3>
+    <ul>
+      <li>Cinnamon</li>
+      <li>New England</li>
+      <li>Light City</li>
+      <li>Half City</li>
+    </ul>
+    <h3>Medium Roasts</h3>
+    <ul>
+      <li>Full City</li>
+      <li>American</li>
+      <li>Regular</li>
+      <li>Breakfast</li>
+    </ul>
+    <h3>Dark Roasts</h3>
+    <ul>
+      <li>French</li>
+      <li>Continental</li>
+      <li>New Orleans</li>
+      <li>Italian</li>
+    </ul>
+  </div>
+
 
   <!--jQuery CDN-->
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <!--Custom JS-->
   <script>
     "use strict";
+    // Toggle visibility for FAQ answers:
     $('.fa-solid').click(function(event) {
-      event.preventDefault();
       $('dd').toggleClass('invisible');
     });
+    // Highlight selected FAQ header:
     $('dt').click(function(event) {
-      event.preventDefault();
-      $(this).toggleClass('highlighted');
+      $(this).toggleClass('highlight');
+    });
+    // Highlight the last list items:
+    $('#highlight-end').click(function(event) {
+      $('ul').each(function() {
+        $(this).children().last().toggleClass('highlight');
+      });
+    });
+    // Bold the children list items:
+    $('h3').click(function(event) {
+      $(this).next().toggleClass('bold');
+    });
+    // Makes the first list item blue:
+    $('li').click(function(event) {
+      $(this).parent().children().first().toggleClass('blue');
     });
   </script>
 </body>
