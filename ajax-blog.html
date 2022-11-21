@@ -72,7 +72,7 @@
       // HINT: You will want to target #insertProducts for your new HTML elements
       for (let i = 0; i < data.length; i++) {
         let tags = data[i].tags.join(", ");
-        let handwriting = "handwriting-" + (i + 1);
+        let handwriting = "handwriting-" + (((i + 3) % 3) + 1);
         input += `<h5 class="${handwriting}">${data[i].name}</h5>` +
                 `<p class="${handwriting}">${data[i].burn}</p>` +
                 `<p class="${handwriting}">${tags}</p>` +

@@ -10,11 +10,31 @@
         "name": "Bethany Byrd",
         "burn": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
         "tags": [
-            "family",
-            "candy",
-            "sweets",
-            "sugar"
+            "#super",
+            "#jumbo"
         ],
         "date": "February 14, 2015"
+    }, {
+    "name": "Dawn Schweitzer",
+    "burn": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
+    "tags": [
+        "#fetch"
+    ],
+    "date": "February 14, 2015"
+    }, {
+    "name": "Amber D'Alessio",
+    "burn": "Nulla porttitor accumsan tincidunt.",
+    "tags": [
+        "#hotdog"
+    ],
+    "date": "February 14, 2015"
+    }, {
+    "name": "Bethany Byrd",
+    "burn": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.",
+    "tags": [
+        "super",
+        "jumbo"
+    ],
+    "date": "February 14, 2015"
     }
 ]
