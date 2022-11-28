@@ -24,7 +24,7 @@
     <!-- Header -->
     <!-- TODO: Make dynamic for different screen sizes -->
     <!--    * Mobile will have cards instead of a tab group -->
-    <!-- TODO: Better styling -->
+    <!-- TODO: Make it pretty -->
     <header>
         <h1>Rain or Shine</h1>
     </header>
@@ -34,11 +34,13 @@
     <!-- TODO: Way for the user to save locations -->
     <!--    * Automatically populate saved locations as tabs -->
     <!-- TODO: First page is either current location, or an overview of all saved locations -->
-    <!--    * https://docs.mapbox.com/mapbox-gl-js/example/locate-user/ -->
     <!--    * https://docs.mapbox.com/mapbox-gl-js/example/center-on-feature/ -->
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Current Location</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Overview</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">San Diego</a>
@@ -49,23 +51,32 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Dallas</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">+ New Location</a>
+        </li>
     </ul>
 
     <!-- Mapbox -->
     <!-- TODO: Dynamic Weather Chips -->
     <!--    * Weather chips populate more info when clicked on -->
+    <!--    * https://docs.mapbox.com/mapbox-gl-js/example/custom-marker-icons/ -->
+    <!--    * https://docs.mapbox.com/mapbox-gl-js/example/add-image/ -->
     <!-- TODO: Swipe between two maps -->
     <!--    * https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-compare/ -->
-    <div id='map' style='width: 100%; height: 725px;'></div>
+    <div class="d-none d-md-block" id="map"></div>
 
-    <!-- 5-day Foreast Cards -->
+    <!-- 5-day Forecast Cards -->
     <!-- TODO: 5-day forecast is minimized and expands when clicked on -->
-    <div class="row g-4">
+    <div class="row row-cols-1 row-cols-md-5 g-1" id="weekly-forecast">
         <div class="col">
             <div class="card m-2">
                 <img src="img/wx/rainy.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Monday</h5><hr>
+                    <div class="row card-title">
+                        <div class="col low">40 F</div>
+                        <div class="col">Monday</div>
+                        <div class="col high">50 F</div>
+                    </div><hr>
                     <p class="card-text"><strong>Description: </strong>Rainy</p>
                     <p class="card-text"><strong>Humidity: </strong>52</p>
                     <p class="card-text"><strong>Wind: </strong>6.78</p>
@@ -77,7 +88,11 @@
             <div class="card m-2">
                 <img src="img/wx/rainy.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Tuesday</h5><hr>
+                    <div class="row card-title">
+                        <div class="col low">40 F</div>
+                        <div class="col">Tuesday</div>
+                        <div class="col high">50 F</div>
+                    </div><hr>
                     <p class="card-text"><strong>Description: </strong>Rainy</p>
                     <p class="card-text"><strong>Humidity: </strong>52</p>
                     <p class="card-text"><strong>Wind: </strong>6.78</p>
@@ -89,7 +104,11 @@
             <div class="card m-2">
                 <img src="img/wx/rainy.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Wednesday</h5><hr>
+                    <div class="row card-title">
+                        <div class="col low">40 F</div>
+                        <div class="col">Wednesday</div>
+                        <div class="col high">50 F</div>
+                    </div><hr>
                     <p class="card-text"><strong>Description: </strong>Rainy</p>
                     <p class="card-text"><strong>Humidity: </strong>52</p>
                     <p class="card-text"><strong>Wind: </strong>6.78</p>
@@ -101,7 +120,11 @@
             <div class="card m-2">
                 <img src="img/wx/rainy.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Thursday</h5><hr>
+                    <div class="row card-title">
+                        <div class="col low">40 F</div>
+                        <div class="col">Thursday</div>
+                        <div class="col high">50 F</div>
+                    </div><hr>
                     <p class="card-text"><strong>Description: </strong>Rainy</p>
                     <p class="card-text"><strong>Humidity: </strong>52</p>
                     <p class="card-text"><strong>Wind: </strong>6.78</p>
@@ -113,7 +136,11 @@
             <div class="card m-2">
                 <img src="img/wx/rainy.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Friday</h5><hr>
+                    <div class="row card-title">
+                        <div class="col low">40 F</div>
+                        <div class="col">Friday</div>
+                        <div class="col high">50 F</div>
+                    </div><hr>
                     <p class="card-text"><strong>Description: </strong>Rainy</p>
                     <p class="card-text"><strong>Humidity: </strong>52</p>
                     <p class="card-text"><strong>Wind: </strong>6.78</p>
@@ -124,9 +151,9 @@
     </div>
 
 
-    <!-- Custom JS -->
-    <script src="js/weather.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="js/weather.js"></script>
 </body>
 </html>

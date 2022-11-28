@@ -1,0 +1,56 @@
+[
+    {
+        "name": "rainy",
+        "quantity": 25,
+        "categories": [
+            "<i class=\"fa-solid fa-screwdriver-wrench\"></i> tool"
+        ],
+        "price": 20
+    }, {
+        "title": "Drill",
+        "quantity": 5,
+        "categories": [
+            "<i class=\"fa-solid fa-screwdriver-wrench\"></i> tool",
+            "<i class=\"fa-solid fa-plug-circle-bolt\"></i> powered"
+        ],
+        "price": 100
+    }, {
+        "title": "Lawnmower",
+        "quantity": 5,
+        "categories": [
+            "<i class=\"fa-solid fa-screwdriver-wrench\"></i> tool",
+            "<i class=\"fa-solid fa-oil-can\"></i> gas",
+            "<i class=\"fa-solid fa-cloud-sun\"></i> outdoor"
+        ],
+        "price": 200
+    }, {
+        "title": "Screwdriver",
+        "quantity": 25,
+        "categories": [
+            "<i class=\"fa-solid fa-screwdriver-wrench\"></i> tool"
+        ],
+        "price": 10
+    }, {
+        "title": "Wrench",
+        "quantity": 25,
+        "categories": [
+            "<i class=\"fa-solid fa-screwdriver-wrench\"></i> tool"
+        ],
+        "price": 15
+    }, {
+    "title": "Measuring Tape",
+    "quantity": 10,
+    "categories": [
+        "<i class=\"fa-solid fa-screwdriver-wrench\"></i> tool"
+    ],
+    "price": 10
+    }, {
+    "title": "Nail Gun",
+    "quantity": 5,
+    "categories": [
+        "<i class=\"fa-solid fa-screwdriver-wrench\"></i> tool",
+        "<i class=\"fa-solid fa-plug-circle-bolt\"></i> powered"
+    ],
+    "price": 75
+    }
+]

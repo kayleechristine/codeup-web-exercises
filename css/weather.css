@@ -1,7 +1,22 @@
 html { font-family: 'Cera Pro', sans-serif; font-weight: 700; }
-.card-text {
-    margin: 0;
-    padding: 0.25em;
+h1 {
+    text-align: center;
+}
+#map {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 95px);
+}
+nav {
+    position: fixed;
+    z-index: 2;
+}
+/* Weekly Forecast */
+#weekly-forecast {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 .card-img-top {
     justify-self: center;
@@ -9,3 +24,17 @@ html { font-family: 'Cera Pro', sans-serif; font-weight: 700; }
     width: 100px;
     margin: 10px;
 }
+.card-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+.card-title>.col {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.card-text {
+    margin: 0;
+    padding: 0.25em;
+}
+.low { color: #228ce4; }
+.high { color: #dc2c00; }

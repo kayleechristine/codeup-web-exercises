@@ -2,6 +2,15 @@
 
 // API Key
 const MAPBOX_TOKEN = "pk.eyJ1Ijoia2F5bGVlY2hyaXN0aW5lIiwiYSI6ImNsYXF4dzVkbDFvMmkzb3Q3a3hvbjY5eWwifQ.kNDNcmM_XjUow6-di1yyTw";
+const OPEN_WEATHER_APPID = "f0817a4ce29f6dc633fb41e280415439";
+
+// Test
+$.get("http://api.openweathermap.org/data/2.5/weather", {
+    APPID: OPEN_WEATHER_APPID,
+    q:     "Dallas, US"
+}).done(function(data) {
+    console.log(data);
+});
 
 // Creates the Map
 // TODO: Map centers on current location by default
@@ -15,12 +24,23 @@ const map = new mapboxgl.Map({
 
 // Centers the Map
 // TODO: Make a function to input the saved locations
+// TODO: Toggle "Saved Locations" View on/off
 window.addEventListener("load", (event) => {
     map.fitBounds([
         [-120.163948, 32.742266], // San Diego
         [-95.054590, 32.806657] // Dallas-Fort Worth
     ]);
 });
+
+// Toggle Current Location
+map.addControl(
+    new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true,
+    })
+);
 
 // Saved Locations
 let savedLocations = [
