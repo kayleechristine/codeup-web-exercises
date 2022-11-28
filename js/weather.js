@@ -13,16 +13,16 @@ const map = new mapboxgl.Map({
     center: [-97.054590, 32.806657]
 });
 
-// Centers the map on the provided locations
+// Centers the Map
 // TODO: Make a function to input the saved locations
 window.addEventListener("load", (event) => {
     map.fitBounds([
-        [-120.163948, 32.742266], // southwestern corner of the bounds 32.74226676021308, -117.16394807356559
-        [-95.054590, 32.806657] // northeastern corner of the bounds
+        [-120.163948, 32.742266], // San Diego
+        [-95.054590, 32.806657] // Dallas-Fort Worth
     ]);
 });
 
-// Saved Location
+// Saved Locations
 let savedLocations = [
     {
         name: "San Diego",
