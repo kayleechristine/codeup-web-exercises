@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Mapbox Map</title>
+  <!-- Mapbox CSS -->
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
+  <!-- Mapbox JS -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+  <!-- Fonts CDN -->
+  <link href="https://fonts.cdnfonts.com/css/cera-compact-pro" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    html { font-family: 'Cera Pro', sans-serif; font-weight: 700; }
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 600px;
+    }
+    .popup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 150px;
+    }
+    .popup>image { padding-bottom: 20px; }
+    .popup>h3 { margin-block-start: .5em; margin-block-end: 0; }
+    .popup>p { margin: 0; padding: 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="#f2d163" class="bi bi-star-fill" viewBox="0 0 16 16">
+      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+    </svg>
+    <h1>Favorite Dallas Restaurants! (so far)</h1>
+  </header>
+  <!-- The HTML element that serves as the Mapbox container -->
+  <div id='map' style='width: 100%; height: 700px;'></div>
+
+  <!-- Custom JS -->
+  <script src="js/keys.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</body>
+</html>
