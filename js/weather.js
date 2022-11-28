@@ -4,45 +4,43 @@
 const MAPBOX_TOKEN = "pk.eyJ1Ijoia2F5bGVlY2hyaXN0aW5lIiwiYSI6ImNsYXF4dzVkbDFvMmkzb3Q3a3hvbjY5eWwifQ.kNDNcmM_XjUow6-di1yyTw";
 
 // Creates the Map
+// TODO: Map centers on current location by default
 mapboxgl.accessToken = MAPBOX_TOKEN;
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v9', // style URL
     zoom: 10, // starting zoom
-    center: [-96.798393, 32.778823] // starting position [lng, lat]
+    center: [-97.054590, 32.806657]
+});
+
+// Centers the map on the provided locations
+// TODO: Make a function to input the saved locations
+window.addEventListener("load", (event) => {
+    map.fitBounds([
+        [-120.163948, 32.742266], // southwestern corner of the bounds 32.74226676021308, -117.16394807356559
+        [-95.054590, 32.806657] // northeastern corner of the bounds
+    ]);
 });
 
 // Saved Location
 let savedLocations = [
     {
-        name: "Allgood Cafe",
+        name: "San Diego",
         location: [-96.780709, 32.784360],
-        type: "Brunch Spot",
+        weather: "Sunny",
         image: "img/breakfast.png"
     },
     {
-        name: "Revolver Taco Lounge",
+        name: "Monterey",
         location: [-96.784189, 32.784003],
-        type: "Taco Bar",
+        type: "Overcast",
         image: "img/taco.png"
     },
     {
-        name: "Brick & Bones",
+        name: "Dallas",
         location: [-96.784171, 32.784795],
-        type: "Fried Chicken",
+        type: "Rainy",
         image: "img/chicken.png"
-    },
-    {
-        name: "Twisted Root",
-        location: [-96.785498, 32.783071],
-        type: "Burger Joint",
-        image: "img/burger.png"
-    },
-    {
-        name: "Emporium Pies",
-        location: [-96.783646, 32.783719],
-        type: "Pie Shop",
-        image: "img/pie.png"
     }
 ];
 
