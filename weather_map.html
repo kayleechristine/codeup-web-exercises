@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="img/plumbob.svg" rel="icon" type="image/png"/>
     <title>Rain or Shine</title>
-    <!--Bootstrap-->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Mapbox CSS -->
@@ -14,9 +14,9 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
     <!-- Fonts CDN -->
     <link href="https://fonts.cdnfonts.com/css/cera-compact-pro" rel="stylesheet">
-    <!--Font Awesome-->
+    <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/e8ac724fbe.js" crossorigin="anonymous"></script>
-    <!--Custom CSS-->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/weather.css">
 </head>
 <body>
@@ -35,26 +35,36 @@
     <!--    * Automatically populate saved locations as tabs -->
     <!-- TODO: First page is either current location, or an overview of all saved locations -->
     <!--    * https://docs.mapbox.com/mapbox-gl-js/example/center-on-feature/ -->
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Current Location</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Overview</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">San Diego</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Monterey</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Dallas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">+ New Location</a>
-        </li>
-    </ul>
+
+    <nav class="navbar pb-0">
+        <div class="container-fluid">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Current Location</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">San Diego</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Monterey</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dallas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">+ New Location</a>
+                </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 
     <!-- Mapbox -->
     <!-- TODO: Dynamic Weather Chips -->
@@ -63,88 +73,96 @@
     <!--    * https://docs.mapbox.com/mapbox-gl-js/example/add-image/ -->
     <!-- TODO: Swipe between two maps -->
     <!--    * https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-compare/ -->
-    <div class="d-none d-md-block" id="map"></div>
+    <div class="d-none d-sm-block" id="map"></div>
 
     <!-- 5-day Forecast Cards -->
     <!-- TODO: 5-day forecast is minimized and expands when clicked on -->
-    <div class="row row-cols-1 row-cols-md-5 g-1" id="weekly-forecast">
-        <div class="col">
-            <div class="card m-2">
-                <img src="img/wx/rainy.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="row card-title">
-                        <div class="col low">40 F</div>
-                        <div class="col">Monday</div>
-                        <div class="col high">50 F</div>
-                    </div><hr>
-                    <p class="card-text"><strong>Description: </strong>Rainy</p>
-                    <p class="card-text"><strong>Humidity: </strong>52</p>
-                    <p class="card-text"><strong>Wind: </strong>6.78</p>
-                    <p class="card-text"><strong>Pressure: </strong>1012</p>
+
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Toggle bottom offcanvas</button>
+
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-body">
+            <div class="row row-cols-1 row-cols-md-5 g-1" id="weekly-forecast">
+                <div class="col">
+                    <div class="card m-2">
+                        <div class="d-flex justify-content-center" id="img-1"></div>
+                        <div class="card-body">
+                            <div class="row card-title">
+                                <div class="col-3 low"><span id="low-1"></span></div>
+                                <div class="col-6 weekday"><span id="day-1"></span></div>
+                                <div class="col-3 high"><span id="high-1"></span></div>
+                            </div><hr>
+                            <p class="card-text"><strong>Description: </strong><span id="wx-1"></span></p>
+                            <p class="card-text"><strong>Humidity: </strong><span id="humid-1"></span></p>
+                            <p class="card-text"><strong>Wind: </strong><span id="wind-1"></span></p>
+                            <p class="card-text"><strong>Pressure: </strong><span id="press-1"></span></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card m-2">
-                <img src="img/wx/rainy.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="row card-title">
-                        <div class="col low">40 F</div>
-                        <div class="col">Tuesday</div>
-                        <div class="col high">50 F</div>
-                    </div><hr>
-                    <p class="card-text"><strong>Description: </strong>Rainy</p>
-                    <p class="card-text"><strong>Humidity: </strong>52</p>
-                    <p class="card-text"><strong>Wind: </strong>6.78</p>
-                    <p class="card-text"><strong>Pressure: </strong>1012</p>
+                <div class="col">
+                    <div class="card m-2">
+                        <div class="d-flex justify-content-center" id="img-2"></div>
+                        <div class="card-body">
+                            <div class="row card-title">
+                                <div class="col-3 low"><span id="low-2"></span></div>
+                                <div class="col-6 weekday"><span id="day-2"></span></div>
+                                <div class="col-3 high"><span id="high-2"></span></div>
+                            </div><hr>
+                            <p class="card-text"><strong>Description: </strong><span id="wx-2"></span></p>
+                            <p class="card-text"><strong>Humidity: </strong><span id="humid-2"></span></p>
+                            <p class="card-text"><strong>Wind: </strong><span id="wind-2"></span></p>
+                            <p class="card-text"><strong>Pressure: </strong><span id="press-2"></span></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card m-2">
-                <img src="img/wx/rainy.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="row card-title">
-                        <div class="col low">40 F</div>
-                        <div class="col">Wednesday</div>
-                        <div class="col high">50 F</div>
-                    </div><hr>
-                    <p class="card-text"><strong>Description: </strong>Rainy</p>
-                    <p class="card-text"><strong>Humidity: </strong>52</p>
-                    <p class="card-text"><strong>Wind: </strong>6.78</p>
-                    <p class="card-text"><strong>Pressure: </strong>1012</p>
+                <div class="col">
+                    <div class="card m-2">
+                        <div class="d-flex justify-content-center" id="img-3"></div>
+                        <div class="card-body">
+                            <div class="row card-title">
+                                <div class="col-3 low"><span id="low-3"></span></div>
+                                <div class="col-6 weekday"><span id="day-3"></span></div>
+                                <div class="col-3 high"><span id="high-3"></span></div>
+                            </div><hr>
+                            <p class="card-text"><strong>Description: </strong><span id="wx-3"></span></p>
+                            <p class="card-text"><strong>Humidity: </strong><span id="humid-3"></span></p>
+                            <p class="card-text"><strong>Wind: </strong><span id="wind-3"></span></p>
+                            <p class="card-text"><strong>Pressure: </strong><span id="press-3"></span></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card m-2">
-                <img src="img/wx/rainy.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="row card-title">
-                        <div class="col low">40 F</div>
-                        <div class="col">Thursday</div>
-                        <div class="col high">50 F</div>
-                    </div><hr>
-                    <p class="card-text"><strong>Description: </strong>Rainy</p>
-                    <p class="card-text"><strong>Humidity: </strong>52</p>
-                    <p class="card-text"><strong>Wind: </strong>6.78</p>
-                    <p class="card-text"><strong>Pressure: </strong>1012</p>
+                <div class="col">
+                    <div class="card m-2">
+                        <div class="d-flex justify-content-center" id="img-4"></div>
+                        <div class="card-body">
+                            <div class="row card-title">
+                                <div class="col-3 low"><span id="low-4"></span></div>
+                                <div class="col-6 weekday"><span id="day-4"></span></div>
+                                <div class="col-3 high"><span id="high-4"></span></div>
+                            </div><hr>
+                            <p class="card-text"><strong>Description: </strong><span id="wx-4"></span></p>
+                            <p class="card-text"><strong>Humidity: </strong><span id="humid-4"></span></p>
+                            <p class="card-text"><strong>Wind: </strong><span id="wind-4"></span></p>
+                            <p class="card-text"><strong>Pressure: </strong><span id="press-4"></span></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card m-2">
-                <img src="img/wx/rainy.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <div class="row card-title">
-                        <div class="col low">40 F</div>
-                        <div class="col">Friday</div>
-                        <div class="col high">50 F</div>
-                    </div><hr>
-                    <p class="card-text"><strong>Description: </strong>Rainy</p>
-                    <p class="card-text"><strong>Humidity: </strong>52</p>
-                    <p class="card-text"><strong>Wind: </strong>6.78</p>
-                    <p class="card-text"><strong>Pressure: </strong>1012</p>
+                <div class="col">
+                    <div class="card m-2">
+                        <div class="d-flex justify-content-center" id="img-5"></div>
+                        <div class="card-body">
+                            <div class="row card-title">
+                                <div class="col-3 low"><span id="low-5"></span></div>
+                                <div class="col-6 weekday"><span id="day-5"></span></div>
+                                <div class="col-3 high"><span id="high-5"></span></div>
+                            </div><hr>
+                            <p class="card-text"><strong>Description: </strong><span id="wx-5"></span></p>
+                            <p class="card-text"><strong>Humidity: </strong><span id="humid-5"></span></p>
+                            <p class="card-text"><strong>Wind: </strong><span id="wind-5"></span></p>
+                            <p class="card-text"><strong>Pressure: </strong><span id="press-5"></span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -153,6 +171,8 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="js/weather.js"></script>
 </body>

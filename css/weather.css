@@ -7,6 +7,7 @@ h1 {
     right: 0;
     width: 100%;
     height: calc(100% - 95px);
+    z-index: -1;
 }
 nav {
     position: fixed;
@@ -18,11 +19,14 @@ nav {
     position: fixed;
     bottom: 0;
 }
+button {
+    position: fixed;
+}
 .card-img-top {
     justify-self: center;
     align-self: center;
     width: 100px;
-    margin: 10px;
+    margin: 10px 0 0 0;
 }
 .card-title {
     font-size: 20px;
@@ -36,5 +40,20 @@ nav {
     margin: 0;
     padding: 0.25em;
 }
-.low { color: #228ce4; }
-.high { color: #dc2c00; }
+.weekday {
+    text-align: center;
+    padding: 0 5px;
+}
+.low { color: #228ce4; padding: 0; text-align: center; }
+.high { color: #dc2c00; padding: 0; text-align: center; }
+.offcanvas-body {
+    padding: 0;
+}
+.offcanvas-bottom {
+    align-items: baseline;
+    margin-bottom: 20px;
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.0);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.0);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
