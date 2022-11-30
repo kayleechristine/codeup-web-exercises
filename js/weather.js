@@ -6,13 +6,13 @@ const OPEN_WEATHER_APPID = "f0817a4ce29f6dc633fb41e280415439";
 
 // Days of the Week
 let weekday = [
+    {id: 0, name: 'Sunday'},
     {id: 1, name: 'Monday'},
     {id: 2, name: 'Tuesday'},
     {id: 3, name: 'Wednesday'},
     {id: 4, name: 'Thursday'},
     {id: 5, name: 'Friday'},
-    {id: 6, name: 'Saturday'},
-    {id: 7, name: 'Sunday'}
+    {id: 6, name: 'Saturday'}
 ];
 
 // Weather Images
@@ -39,11 +39,11 @@ $.get("http://api.openweathermap.org/data/2.5/weather", {
 
     // Day of the Week
     let date = new Date(data.dt * 1000); // Local Time
-    let day = weekday[date.getDay() - 1].name; // Day of the Week
+    let day = weekday[date.getDay()].name; // Day of the Week
 
     // Temperatures
-    let low = Math.round(data.main.temp_min); // Low Temp
-    let high = Math.round(data.main.temp_max); // High Temp
+    let low = Math.round(data.main.temp_min) + '°F'; // Low Temp
+    let high = Math.round(data.main.temp_max) + '°F'; // High Temp
 
     // Details
     let img = data.weather[0].description.replace(' ', '-'); // Image
@@ -86,8 +86,8 @@ $.get("http://api.openweathermap.org/data/2.5/forecast", {
 
         // Day of the Week
         let num = new Date(data.list[index + 1].dt * 1000); // Local Time
-        let day = weekday[num.getDay() - 1].name; // Day of the Week
-        // console.log(day);
+        let day = weekday[num.getDay()].name; // Day of the Week
+        console.log(num.getDay());
 
         // Average Daily Temperatures // TODO: Calculate high & low temps
         let max = index + 8;
@@ -95,8 +95,6 @@ $.get("http://api.openweathermap.org/data/2.5/forecast", {
         for (let i = index; i < max; i++) {
             tempData.push(data.list[i].main.temp);
         }
-
-
 
         // function highAndLow(numbers) {
         //     numbers = numbers.split(" ");
@@ -164,7 +162,7 @@ const map = new mapboxgl.Map({
 //     ]);
 // });
 
-// Add the control to the map.
+// Search Box Feature
 map.addControl(
     new MapboxGeocoder({
         accessToken: mapboxgl.accessToken,
@@ -181,6 +179,27 @@ map.addControl(
         trackUserLocation: true,
     })
 );
+
+// Radar API
+// map.addSource("twcRadar", {
+//     type: "raster",
+//     tiles: [
+//         "https://api.weather.com/v3/TileServer/tile/radar?s=" + lastTimeSlice + "&xyz={x}:{y}:{z}&apiKey=" + twcApiKey,
+//     ],
+//     tileSize: 256,
+// });
+//
+// map.addLayer(
+//     {
+//         id: "radar",
+//         type: "raster",
+//         source: "twcRadar",
+//         paint: {
+//             "raster-opacity": 0.5,
+//         },
+//     },
+//     "aeroway-line"
+// );
 
 // Saved Locations
 // TODO: Allow user to save locations for later
