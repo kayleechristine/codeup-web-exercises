@@ -164,6 +164,14 @@ const map = new mapboxgl.Map({
 //     ]);
 // });
 
+// Add the control to the map.
+map.addControl(
+    new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+    })
+);
+
 // Toggle Current Location
 map.addControl(
     new mapboxgl.GeolocateControl({
