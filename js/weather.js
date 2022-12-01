@@ -1,8 +1,5 @@
 "use strict";
 
-// API Key
-
-
 // Days of the Week
 let weekday = [
     {id: 0, name: 'Sunday'},
@@ -12,20 +9,6 @@ let weekday = [
     {id: 4, name: 'Thursday'},
     {id: 5, name: 'Friday'},
     {id: 6, name: 'Saturday'}
-];
-
-// Weather Images
-let wxPics = [
-    {name: 'Clear Sky', img: 'img/wx/clear-sky.png'},
-    {name: 'Few Clouds', img: 'img/wx/few-clouds.png'},
-    {name: 'Scattered Clouds', img: 'img/wx/scattered-clouds.png'},
-    {name: 'Broken Clouds', img: 'img/wx/broken-clouds.png'},
-    {name: 'Overcast Clouds', img: 'img/wx/overcast-clouds.png'},
-    {name: 'Drizzle', img: 'img/wx/drizzle.png'},
-    {name: 'Rain', img: 'img/wx/rain.png'},
-    {name: 'Thunderstorm', img: 'img/wx/thunderstorm.png'},
-    {name: 'Snow', img: 'img/wx/snow.png'},
-    {name: 'Mist', img: 'img/wx/mist.png'} // TODO: Make default image
 ];
 
 // Title Case Function
@@ -53,28 +36,23 @@ function updateWeather(lat, lon) {
         let date = new Date(data.dt * 1000); // Local Time
         let day = weekday[date.getDay()].name; // Day of the Week
 
-        // Temperatures
-        let low = Math.round(data.main.temp_min) + '°F'; // Low Temp
-        let high = Math.round(data.main.temp_max) + '°F'; // High Temp
-
         // Details
-        let img = data.weather[0].description.replace(' ', '-'); // Image
-        let wx = data.weather[0].description; // Wx Description
-        let humid = data.main.humidity; // Humidity
-        let wind = data.wind.speed; // Wind Speed
-        let press = data.main.pressure; // Pressure
+        let {temp_min, temp_max, humidity, pressure} = data.main; // Temps, Humidity & Pressure
+        let {description} = data.weather[0]; // Wx Description
+        let img = description.replace(' ', '-'); // Image
+        let {speed} = data.wind; // Wind Speed
 
         // Pushes to the Card
         $('#location').html(data.name);
         $('#img-now').html(`<img src="img/wx/${img}.png" class="rounded-start">`);
         $('#img-1').html(`<img src="img/wx/${img}.png" class="card-img-top">`);
         $('#day-1').html(day);
-        $('#low-1, #low').html(low);
-        $('#high-1, #high').html(high);
-        $('#wx-1, #wx').html(titleCase(wx));
-        $('#humid-1, #humid').html(humid);
-        $('#wind-1, #wind').html(wind);
-        $('#press-1, #press').html(press);
+        $('#low-1, #low').html(Math.round(temp_min) + '°F');
+        $('#high-1, #high').html(Math.round(temp_max) + '°F');
+        $('#wx-1, #wx').html(titleCase(description));
+        $('#humid-1, #humid').html(humidity);
+        $('#wind-1, #wind').html(speed);
+        $('#press-1, #press').html(pressure);
 
     });
 
@@ -85,7 +63,10 @@ function updateWeather(lat, lon) {
         lon: lon,
         units: "imperial",
     }).done(function (data) {
-        // console.log('5 Day Forecast', data);
+        console.log('5 Day Forecast', data);
+
+        let { temp } = data.list[0].main;
+        console.log(temp);
 
         // Convert UTC time to Local Time
         let date = new Date(data.list[0].dt * 1000);
@@ -102,14 +83,12 @@ function updateWeather(lat, lon) {
             let num = new Date(data.list[index + 1].dt * 1000); // Local Time
             let day = weekday[num.getDay()].name; // Day of the Week
 
-            // Average Daily Temperatures
+            // Calculating Daily Averages
             let max = index + 8;
             let tempData = [];
             for (let i = index; i < max; i++) {
                 tempData.push(data.list[i].main.temp);
             }
-
-            // Calculating Daily Averages
             let pressureData = [];
             for (let i = index; i < max; i++) {
                 pressureData.push(data.list[i].main.pressure);
@@ -128,21 +107,21 @@ function updateWeather(lat, lon) {
             }
 
             // Details
-            let img = data.list[index].weather[0].description.replace(' ', '-'); // Image
-            let wx = data.list[index].weather[0].description; // Wx Description
-            let humid = findAverage(humidityData); // Humidity
+            let {description} = data.list[index].weather[0]; // Wx Description
+            let img = description.replace(' ', '-'); // Image
+            let humidity = findAverage(humidityData); // Humidity
             let wind = findAverage(windData); // Wind Speed
-            let press = findAverage(pressureData); // Pressure
+            let pressure = findAverage(pressureData); // Pressure
 
             // Pushes to the Card
             $(`#img-${i}`).html(`<img src="img/wx/${img}.png" class="card-img-top">`);
             $(`#day-${i}`).html(day);
             $(`#low-${i}`).html(Math.round(Math.min(...tempData)) + '°F');
             $(`#high-${i}`).html(Math.round(Math.max(...tempData)) + '°F');
-            $(`#wx-${i}`).html(titleCase(wx));
-            $(`#humid-${i}`).html(Math.round(humid));
+            $(`#wx-${i}`).html(titleCase(description));
+            $(`#humid-${i}`).html(Math.round(humidity));
             $(`#wind-${i}`).html(wind.toFixed(2));
-            $(`#press-${i}`).html(Math.round(press));
+            $(`#press-${i}`).html(Math.round(pressure));
 
             index += 8;
 
@@ -162,7 +141,7 @@ const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v9', // style URL
     zoom: 10, // starting zoom
-    center: [-96.799668, 32.780834]
+    center: [-96.799668, 32.780834] // Dallas, TX
 });
 // console.log('Mapbox:', map);
 
