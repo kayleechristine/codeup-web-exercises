@@ -79,7 +79,7 @@ function updateWeather(lat, lon) {
 
     });
 
-    // 5-day Forecast Test
+    // 5-day Forecast
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
         lat: lat,
@@ -149,7 +149,6 @@ function updateWeather(lat, lon) {
 
         }
     });
-
 }
 
 // Loads Dallas Weather by Default
@@ -177,6 +176,7 @@ const geocoder = new MapboxGeocoder({
 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
+// Draggable Marker
 const marker = new mapboxgl.Marker({
     color: '#fcba13',
     draggable: true
@@ -193,8 +193,6 @@ marker.on('dragend', onDragEnd);
 $('.mapboxgl-ctrl-geocoder--input').change(function() {
 
     let location = $(this).val();
-    // let title = location.split(',')[0];
-    // $('#location').html(title);
 
     $.get("http://api.openweathermap.org/geo/1.0/direct", {
         APPID: OPEN_WEATHER_APPID,

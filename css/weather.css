@@ -22,10 +22,7 @@ h1 {
     height: 100%;
     margin: 0;
 }
-nav {
-    position: fixed;
-    z-index: 2;
-}
+nav { position: fixed; z-index: 2; }
 
 /*Current Weather*/
 #current-wx {
@@ -55,19 +52,11 @@ h5 {
     height: 44%;
     bottom: 0;
     overflow: hidden;
-    /*backdrop-filter: blur(15px);*/
-    /*background-color: rgba(255, 255, 255, 0.0);*/
-    /*box-shadow: 0 1px 12px rgba(0, 0, 0, 0.0);*/
-    /*border: 1px solid rgba(0, 0, 0, 0.1);*/
     border-radius: 4px;
     transition: all 1s;
     margin-left: 0;
 }
-
-.slider.close {
-    bottom: 100%;
-    height: 23%;
-}
+.slider.close { bottom: 100%; height: 23%; }
 
 /* Weekly Forecast */
 #weekly-forecast {
@@ -88,24 +77,15 @@ h5 {
     width: 100px;
     margin: 10px 0 0 0;
 }
-.card-title {
-    font-weight: 700;
-    font-size: 18px;
-}
-.card-title>.col {
-    padding-right: 10px;
-    padding-left: 10px;
-}
+.card-title { font-weight: 700; font-size: 18px; }
+.card-title>.col { padding-right: 10px; padding-left: 10px; }
 .card-text {
     margin: 0;
     padding: 0.25em;
     font-size: 14px;
     text-align: initial;
 }
-.weekday {
-    text-align: center;
-    padding: 0 5px;
-}
+.weekday { text-align: center; padding: 0 5px; }
 .low { color: #2764f0; padding: 0; text-align: center; }
 .high { color: #dc2c00; padding: 0; text-align: center; }
 
@@ -119,6 +99,4 @@ h5 {
     margin-top: -4%;
     top: 10px;
 }
-.mapboxgl-ctrl-geocoder {
-    min-width: 100%;
-}
+.mapboxgl-ctrl-geocoder { min-width: 100%; }
