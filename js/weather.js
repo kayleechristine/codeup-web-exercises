@@ -53,7 +53,6 @@ function updateWeather(lat, lon) {
         $('#humid-1, #humid').html(humidity);
         $('#wind-1, #wind').html(speed);
         $('#press-1, #press').html(pressure);
-
     });
 
     // 5-day Forecast
@@ -64,9 +63,6 @@ function updateWeather(lat, lon) {
         units: "imperial",
     }).done(function (data) {
         console.log('5 Day Forecast', data);
-
-        let { temp } = data.list[0].main;
-        console.log(temp);
 
         // Convert UTC time to Local Time
         let date = new Date(data.list[0].dt * 1000);
@@ -85,20 +81,12 @@ function updateWeather(lat, lon) {
 
             // Calculating Daily Averages
             let max = index + 8;
-            let tempData = [];
+            let tempData = [], pressureData = [], humidityData = [], windData = [];
+
             for (let i = index; i < max; i++) {
                 tempData.push(data.list[i].main.temp);
-            }
-            let pressureData = [];
-            for (let i = index; i < max; i++) {
                 pressureData.push(data.list[i].main.pressure);
-            }
-            let humidityData = [];
-            for (let i = index; i < max; i++) {
                 humidityData.push(data.list[i].main.humidity);
-            }
-            let windData = [];
-            for (let i = index; i < max; i++) {
                 windData.push(data.list[i].wind.speed);
             }
 
@@ -124,7 +112,6 @@ function updateWeather(lat, lon) {
             $(`#press-${i}`).html(Math.round(pressure));
 
             index += 8;
-
         }
     });
 }
@@ -143,7 +130,7 @@ const map = new mapboxgl.Map({
     zoom: 10, // starting zoom
     center: [-96.799668, 32.780834] // Dallas, TX
 });
-// console.log('Mapbox:', map);
+    // console.log('Mapbox:', map);
 
 // Search Box Feature
 const geocoder = new MapboxGeocoder({
@@ -164,7 +151,6 @@ function onDragEnd() {
     const lngLat = marker.getLngLat();
     updateWeather(lngLat.lat, lngLat.lng);
 }
-
 marker.on('dragend', onDragEnd);
 
 // Update Weather by Location
