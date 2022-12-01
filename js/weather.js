@@ -29,22 +29,19 @@ let wxPics = [
     {name: 'Mist', img: 'img/wx/mist.png'} // TODO: Make default image
 ];
 
+// Title Case Function
 function titleCase(str) {
     let splitStr = str.toLowerCase().split(' ');
-    for (var i = 0; i < splitStr.length; i++) {
-        // You do not need to check if i is larger than splitStr length, as your for does that for you
-        // Assign it back to the array
+    for (let i = 0; i < splitStr.length; i++) {
         splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
     }
-    // Directly return the joined string
     return splitStr.join(' ');
 }
 
-document.write(titleCase("I'm a little tea pot"));
-
+// Populates the Weather Cards
 function updateWeather(lat, lon) {
 
-// Current Day Weather
+    // Current Day Weather
     $.get("http://api.openweathermap.org/data/2.5/weather", {
         APPID: OPEN_WEATHER_APPID,
         lat: lat,
@@ -69,18 +66,20 @@ function updateWeather(lat, lon) {
         let press = data.main.pressure; // Pressure
 
         // Pushes to the Card
+        $('#location').html(data.name);
+        $('#img-now').html(`<img src="img/wx/${img}.png" class="rounded-start">`);
         $('#img-1').html(`<img src="img/wx/${img}.png" class="card-img-top">`);
         $('#day-1').html(day);
-        $('#low-1').html(low);
-        $('#high-1').html(high);
-        $('#wx-1').html(titleCase(wx));
-        $('#humid-1').html(humid);
-        $('#wind-1').html(wind);
-        $('#press-1').html(press);
+        $('#low-1, #low').html(low);
+        $('#high-1, #high').html(high);
+        $('#wx-1, #wx').html(titleCase(wx));
+        $('#humid-1, #humid').html(humid);
+        $('#wind-1, #wind').html(wind);
+        $('#press-1, #press').html(press);
 
     });
 
-// 5-day Forecast Test
+    // 5-day Forecast Test
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: OPEN_WEATHER_APPID,
         lat: lat,
@@ -155,51 +154,47 @@ function updateWeather(lat, lon) {
 
 // Loads Dallas Weather by Default
 window.addEventListener("load", (event) => {
-    updateWeather(32.806657, -95.054590);
+    marker.setLngLat([-96.799668, 32.780834]).addTo(map);
+    updateWeather(32.780834, -96.799668);
 });
 
 // Creates the Map
-// TODO: Map centers on current location by default
 mapboxgl.accessToken = MAPBOX_TOKEN;
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v9', // style URL
     zoom: 10, // starting zoom
-    center: [-97.054590, 32.806657]
+    center: [-96.799668, 32.780834]
 });
-
-// Centers the Map
-// TODO: Make a function to input the saved locations
-// TODO: Toggle "Saved Locations" View on/off
-// window.addEventListener("load", (event) => {
-//     map.fitBounds([
-//         [-120.163948, 32.742266], // San Diego
-//         [-95.054590, 32.806657] // Dallas-Fort Worth
-//     ]);
-// });
+// console.log('Mapbox:', map);
 
 // Search Box Feature
-map.addControl(
-    new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken,
-        mapboxgl: mapboxgl
-    })
-);
+const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    marker: null,
+    mapboxgl: mapboxgl
+})
 
-// Toggle Current Location
-map.addControl(
-    new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-        trackUserLocation: true,
-    })
-);
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
+const marker = new mapboxgl.Marker({
+    color: '#fcba13',
+    draggable: true
+})
+
+function onDragEnd() {
+    const lngLat = marker.getLngLat();
+    updateWeather(lngLat.lat, lngLat.lng);
+}
+
+marker.on('dragend', onDragEnd);
 
 // Update Weather by Location
 $('.mapboxgl-ctrl-geocoder--input').change(function() {
 
     let location = $(this).val();
+    // let title = location.split(',')[0];
+    // $('#location').html(title);
 
     $.get("http://api.openweathermap.org/geo/1.0/direct", {
         APPID: OPEN_WEATHER_APPID,
@@ -209,120 +204,15 @@ $('.mapboxgl-ctrl-geocoder--input').change(function() {
         let lat = data[0].lat;
         let lon = data[0].lon;
         updateWeather(lat, lon);
+        marker.setLngLat([lon, lat]).addTo(map);
     })
 });
-// TODO: Update by Current Location
 
-console.log('Mapbox:', map);
+// Bootstrap Tooltips
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
-// Saved Locations
-// TODO: Allow user to save locations for later
-let savedLocations = [
-    {
-        name: "San Diego",
-        location: [-110.163948, 32.742266],
-        weather: "Sunny",
-        image: "img/breakfast.png"
-    },
-    {
-        name: "Dallas",
-        location: [-96.784171, 32.784795],
-        type: "Rainy",
-        image: "img/chicken.png"
-    }
-];
-
-// Generates Markers & Popups
-let marker;
-savedLocations.forEach(function(location){
-    let popup = new mapboxgl.Popup()
-        .setHTML(`<div class="popup"><img src="${location.image}" style="width: 50px; margin: auto;"><h3>${location.name}</h3> <p>${location.type}</p></div>`);
-    marker = new mapboxgl.Marker()
-        .setLngLat(location.location)
-        .addTo(map)
-        .setPopup(popup);
+// Forecast Slider Animation
+$('.trigger, .slider').click(function() {
+    $('.slider').toggleClass('close');
 });
-
-// ******************************************************************************************************************//
-
-// // Custom Coffee Functionality
-// let addCoffee = function (e) {
-//     e.preventDefault(); // doesn't submit the form, just updates the data
-//     coffees.push( {
-//         id: coffees.length + 1,
-//         name: customName.value,
-//         roast: customRoast.value,
-//         img: customImg(customRoast.value)
-//     });
-//     console.log(`${customName.value} has been added to the inventory.`);
-//     coffeeDiv.innerHTML = renderCoffees(coffees);
-// }
-//
-// let customName = document.querySelector('#custom-name');
-// let customRoast = document.querySelector('#custom-roast');
-// let customSubmit = document.querySelector('#custom-submit');
-// customSubmit.addEventListener('click', addCoffee);
-//
-// // Custom Coffee Placeholder Images
-// function customImg(input) {
-//     if (input === "Medium") {
-//         return 'img/coffee_medium.webp';
-//     } else if (input === "Dark") {
-//         return 'img/coffee_dark.webp';
-//     } else {
-//         return 'img/coffee_light.webp';
-//     }
-// }
-//
-// // Populates the Coffee Selection
-// function renderCoffee(coffee) {
-//     let html = '<div class="card bg-transparent m-4 align-items-center" style="width: 18rem;">';
-//     html += '<img src="' + coffee.img + '" class="card-img-top align-self-center mt-2" style="width: 17rem;" alt="coffee image">'; // TODO: img for coffees obj
-//     html += '<div class="card-body coffees">';
-//     html += '<h3 class="card-title">' + coffee.name + '</h3>';
-//     html += '<p class="card-text">' + coffee.roast + ' Roast</p>';
-//     html += '</div>';
-//     html += '</div>';
-//
-//     return html;
-// }
-//
-// function renderCoffees(coffees) {
-//     let html = '';
-//     for(let i = 0; i < coffees.length; i++) {
-//         html += renderCoffee(coffees[i]);
-//     }
-//     return html;
-// }
-//
-// let coffeeDiv = document.querySelector('#coffees');
-// coffeeDiv.innerHTML = renderCoffees(coffees);
-//
-// // Updates the Coffee by Roast
-// function updateCoffees(e) {
-//     e.preventDefault(); // doesn't submit the form, just updates the data
-//     let selectedRoast = roastSelection.value;
-//     let filteredCoffees = [];
-//     if (selectedRoast === "All") {
-//         coffees.forEach(function(coffee){
-//             if (coffee.name.toLowerCase().includes(search.value.toLowerCase())) {
-//                 filteredCoffees.push(coffee);
-//             }
-//         });
-//     } else if (selectedRoast !== "All") {
-//         coffees.forEach(function(coffee) {
-//             if (coffee.roast === selectedRoast) {
-//                 if (coffee.name.toLowerCase().includes(search.value.toLowerCase())) {
-//                     filteredCoffees.push(coffee);
-//                 }
-//             }
-//         });
-//     }
-//
-//     coffeeDiv.innerHTML = renderCoffees(filteredCoffees);
-// }
-//
-// let search = document.getElementById('search');
-// search.addEventListener('keyup', updateCoffees);
-// let roastSelection = document.querySelector('#roast-selection');
-// roastSelection.addEventListener('change', updateCoffees);
