@@ -28,33 +28,32 @@ const users = [
   }
 ];
 
-// TODO: fill in your name and email and add some programming languages you know to the languages array
+// fill in your name and email and add some programming languages you know to the languages array
 const name = 'kaylee';
 const email = 'kaylee.christine.morris@gmail.com';
 const languages = ['html', 'css', 'javascript'];
 
-// TODO: replace the `var` keyword with `const`, then try to reassign a variable declared as `const`
+// replace the `var` keyword with `const`, then try to reassign a variable declared as `const`
 // const name = 'joshua';
-// An error was thrown when I tried reassigning the name constant variable
+// an error was thrown when I tried reassigning the name constant variable due to it already being declared
 
-// TODO: rewrite the object literal using object property shorthand
-users.push({
-  name: name,
-  email: email,
-  languages: languages
-});
+// rewrite the object literal using object property shorthand
+users.push({ name, email, languages });
 
-// TODO: replace `var` with `let` in the following variable declarations
-var emails = [];
-var names = [];
+// replace `var` with `let` in the following variable declarations
+let emails = [];
+let names = [];
 
-// TODO: rewrite the following using arrow functions
-users.forEach(function(user) {
-  return emails.push(user.email);
-});
-users.forEach(function(user) {
-  return names.push(user.name);
-});
+// rewrite the following using arrow functions
+// users.forEach(function(user) {
+//   return emails.push(user.email);
+// });
+// users.forEach(function(user) {
+//   return names.push(user.name);
+// });
+
+const userEmails = (user) => emails.push(user.email);
+const userNames = (user) => names.push(user.name);
 
 // TODO: replace `var` with `let` in the following declaration
 var developers = [];
