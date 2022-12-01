@@ -177,8 +177,7 @@ $('.mapboxgl-ctrl-geocoder--input').change(function() {
         q: location
     }).done(function(data) {
 
-        let lat = data[0].lat;
-        let lon = data[0].lon;
+        let {lat, lon} = data[0];
         updateWeather(lat, lon);
         marker.setLngLat([lon, lat]).addTo(map);
     })
