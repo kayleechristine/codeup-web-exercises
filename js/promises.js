@@ -3,7 +3,7 @@
 
     // Chaining Promises
     function getLastCommit(username) {
-        return fetch(`https://api.github.com/users/${username}/events/public`, {headers: {'Authorization': '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'}}).then(response => {
+        return fetch(`https://api.github.com/users/${username}/events/public`, {headers: {'Authorization': 'GITHUB_ID'}}).then(response => {
             return response.json().then((data) => {
                 console.log(data[0].created_at);
             });
