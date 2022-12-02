@@ -77,7 +77,10 @@ console.log(longEmail);
 // let getNames = users.map(user => instructors += `${user.name} `);
 // console.log(instructors);
 
-let instructors = users.reduce((beginning, user) => {
-    return beginning + user.name + " ";
+let instructors = users.reduce(function (beginning, user, index) {
+    if (index === users.length - 1) {
+        return beginning + user.name + ".";
+    }
+    return beginning + user.name + ", ";
 }, 'Your instructors are: ');
 console.log(instructors);
