@@ -49,14 +49,14 @@ let emails = users.map(user => user.email);
 console.log(emails);
 
 // TODO: Use .reduce to get the total years of experience from the list of users.
-// TODO: Once you get the total of years you can use the result to calculate the average.
 
-let exp = users.map(user => user.yearsOfExperience);
-let averageExp = exp.reduce((sum, num) => {
-    // return sum + num; // This will return to total sum of the users' experience
-    return sum + num / users.length; // Finds the average by dividing by the length of the users object
+let totalExp = users.reduce((total, user) => {
+    return total + user.yearsOfExperience;
 }, 0);
-// console.log(totalExp);
+console.log(totalExp);
+
+// TODO: Once you get the total of years you can use the result to calculate the average.
+let averageExp = totalExp / users.length;
 console.log(averageExp);
 
 // TODO: Use .reduce to get the longest email from the list of users.
