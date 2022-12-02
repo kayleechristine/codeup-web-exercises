@@ -62,7 +62,7 @@ function updateWeather(lat, lon) {
         lon: lon,
         units: "imperial",
     }).done(function (data) {
-        console.log('5 Day Forecast', data);
+        // console.log('5 Day Forecast', data);
 
         // Convert UTC time to Local Time
         let date = new Date(data.list[0].dt * 1000);
@@ -89,7 +89,6 @@ function updateWeather(lat, lon) {
                 humidityData.push(data.list[i].main.humidity);
                 windData.push(data.list[i].wind.speed);
             }
-
             function findAverage(arr) {
                 return arr.filter(num => num >= 0).reduce((sum, add) => sum + add, 0) / 8;
             }
@@ -111,7 +110,7 @@ function updateWeather(lat, lon) {
             $(`#wind-${i}`).html(wind.toFixed(2));
             $(`#press-${i}`).html(Math.round(pressure));
 
-            index += 8;
+            index += 8; // Weather updates in 3-hr increments, with 8/day
         }
     });
 }
