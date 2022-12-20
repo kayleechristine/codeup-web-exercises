@@ -73,14 +73,13 @@ function updateWeather(lat, lon) {
         // Convert UTC time to Local Time
         let date = new Date(data.list[0].dt * 1000);
         console.log('This: ', date.getUTCHours(data.list[0].dt * 1000));
-        console.log('5 Day Date: ', date);
         let hours = date.getHours();
 
         // Find the Next Day
         let offset = date.getTimezoneOffset() / 60; // # hours difference from local to UTC time
-        console.log(offset);
-        let index = (((24 - offset) - hours) / 3) + 1; // Index of the next day's first weather report
-        console.log(index);
+        console.log('offset:', offset, 'hours:', hours);
+        let index = (((24 - offset) - hours) / 3) + 3; // Index of the next day's first weather report
+        console.log(index); // TODO: Test
 
         // Days Two - Five
         for (let i = 2; i <= 5; i++) {
