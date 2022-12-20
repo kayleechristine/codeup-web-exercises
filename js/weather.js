@@ -20,6 +20,11 @@ function titleCase(str) {
     return splitStr.join(' ');
 }
 
+// Convert Timezone
+function convertTZ(date, tzString) {
+    return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));
+}
+
 // Populates the Weather Cards
 function updateWeather(lat, lon) {
 
@@ -30,10 +35,11 @@ function updateWeather(lat, lon) {
         lon: lon,
         units: "imperial"
     }).done(function (data) {
-        // console.log('Current Weather', data);
+        console.log('Current Weather', data);
 
         // Day of the Week
         let date = new Date(data.dt * 1000); // Local Time
+        console.log('Current Weather Date: ', date);
         let day = weekday[date.getDay()].name; // Day of the Week
 
         // Details
@@ -62,21 +68,26 @@ function updateWeather(lat, lon) {
         lon: lon,
         units: "imperial",
     }).done(function (data) {
-        // console.log('5 Day Forecast', data);
+        console.log('5 Day Forecast', data);
 
         // Convert UTC time to Local Time
         let date = new Date(data.list[0].dt * 1000);
+        console.log('This: ', date.getUTCHours(data.list[0].dt * 1000));
+        console.log('5 Day Date: ', date);
         let hours = date.getHours();
 
         // Find the Next Day
         let offset = date.getTimezoneOffset() / 60; // # hours difference from local to UTC time
+        console.log(offset);
         let index = (((24 - offset) - hours) / 3) + 1; // Index of the next day's first weather report
+        console.log(index);
 
         // Days Two - Five
         for (let i = 2; i <= 5; i++) {
 
             // Day of the Week
-            let num = new Date(data.list[index + 1].dt * 1000); // Local Time
+            let num = new Date(data.list[(index + 1)].dt * 1000); // Local Time
+            console.log(num);
             let day = weekday[num.getDay()].name; // Day of the Week
 
             // Calculating Daily Averages
