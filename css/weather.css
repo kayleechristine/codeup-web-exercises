@@ -24,7 +24,7 @@ h1 {
 }
 nav { position: fixed; z-index: 2; }
 
-/*Current Weather*/
+/* Current Weather */
 #current-wx {
     position: absolute;
     top: 63px;
@@ -39,7 +39,7 @@ nav { position: fixed; z-index: 2; }
     margin-right: 30px;
 }
 
-/*Forecast Drawer*/
+/* Forecast Drawer */
 h5 {
     position: absolute;
     margin: 10px;
@@ -89,7 +89,7 @@ h5 {
 .low { color: #2764f0; padding: 0; text-align: center; }
 .high { color: #dc2c00; padding: 0; text-align: center; }
 
-/*Mapbox Search Bar*/
+/* Mapbox Search Bar */
 .geocoder {
     position: relative;
     z-index: 1;
